@@ -1,0 +1,169 @@
+{
+  "project": {
+    "name": "Terreatek Landslide Assessment",
+    "prepared_by": "GeoClaw",
+    "client": "Terreatek / Engesis Tecnologia",
+    "date": "2026-04-08",
+    "status": "In Progress"
+  },
+  "site": {
+    "name": "Alameda Engenheiro Gentil Forn",
+    "neighborhood": "Jardim Gloria",
+    "city": "Juiz de Fora",
+    "state": "Minas Gerais",
+    "country": "Brazil",
+    "coordinates_approx": {
+      "latitude": -21.76,
+      "longitude": -43.35
+    },
+    "utm_zone": "23S",
+    "epsg": "EPSG:31983 (SIRGAS 2000)"
+  },
+  "datasets": {
+    "available": [
+      {
+        "name": "SPT Boring Report #004/26",
+        "format": "PDF",
+        "description": "14 boreholes, 102.24m total drilled length",
+        "date": "2026-03-16"
+      },
+      {
+        "name": "AutoCAD Road Surface Design",
+        "format": "DWG",
+        "size_mb": 279,
+        "description": "Eng. Gentil Forn area engineering design"
+      },
+      {
+        "name": "Digital Orthophoto Mosaic",
+        "format": "ECW",
+        "size_mb": 44.5,
+        "description": "Area 06 high-resolution raster"
+      },
+      {
+        "name": "Landslide Points",
+        "format": "KMZ",
+        "description": "Landslide event locations"
+      },
+      {
+        "name": "Borehole Survey Points",
+        "format": "KML",
+        "description": "FUROS GENTIL FORN - 2nd Phase (coordinates EMPTY)"
+      },
+      {
+        "name": "Site Video",
+        "format": "MP4",
+        "size_mb": 30.5,
+        "description": "Morro do Cristo footage"
+      },
+      {
+        "name": "Reference InSAR Products",
+        "format": "PNG",
+        "size_mb": 652,
+        "description": "6 sites from Sikkim, India (methodology examples only)"
+      }
+    ],
+    "missing": [
+      {
+        "name": "InSAR for Juiz de Fora AOI",
+        "source": "Sentinel-1 processing",
+        "priority": "CRITICAL"
+      },
+      {
+        "name": "Hourly Rainfall",
+        "source": "ERA5 or CHIRPS via Google Earth Engine",
+        "priority": "HIGH"
+      },
+      {
+        "name": "Post-Event Planet Imagery",
+        "source": "Planet Explorer API",
+        "priority": "HIGH"
+      }
+    ]
+  },
+  "geotechnical_summary": {
+    "investigation": {
+      "contractor": "GFM2 Empreendimentos Imobiliarios LTDA",
+      "client": "ENGEDRAIN CONSTRUCOES LTDA",
+      "standards": ["NBR-6484 (SPT)", "NBR-6502 (Soil Classification)"],
+      "total_boreholes": 14,
+      "total_drilled_m": 102.24,
+      "date": "March 2026"
+    },
+    "stratigraphy": {
+      "layer_1": {
+        "name": "FILL MATERIAL",
+        "depth_range": "0 to 2-5m",
+        "composition": "Heterogeneous silty clay to sandy clay, yellow-brown",
+        "nspt_range": "2-12 (mostly 2-5)",
+        "consistency": "Very soft to soft",
+        "risk_level": "CRITICAL - primary weak layer"
+      },
+      "layer_2": {
+        "name": "RESIDUAL SOIL / SAPROLITE",
+        "depth_range": "Variable",
+        "composition": "Clayey silt to silty clay, yellow to vermilion (lateritic)",
+        "nspt_range": "4-32",
+        "consistency": "Medium to hard"
+      },
+      "layer_3": {
+        "name": "ROCK DECOMPOSITION SOIL",
+        "depth_range": "1.05m to 20.08m from surface",
+        "composition": "Very sandy silt, dark gray with yellow/white veins",
+        "nspt_range": ">30",
+        "consistency": "Very compact, impenetrable"
+      }
+    },
+    "groundwater": {
+      "detected_in": ["SP01", "SP09", "SP10", "SP14"],
+      "seepage_levels_m": [0.02, 0.01, 0.01, 0.07],
+      "assessment": "Low water table currently, but perched water in fill during wet season is probable"
+    },
+    "depth_to_rock": {
+      "shallowest": {"borehole": "SP04", "depth_m": 1.05, "note": "Road pavement"},
+      "typical_road": {"boreholes": ["SP02","SP03","SP06","SP08","SP10","SP12"], "depth_range_m": "2-6"},
+      "deeper_zones": {"boreholes": ["SP01","SP05","SP07","SP09","SP11","SP14"], "depth_range_m": "7-11"},
+      "deepest": {"borehole": "SP13", "depth_m": 20.08, "note": "Buried valley or deep weathering pocket"}
+    }
+  },
+  "failure_hypothesis": {
+    "type": "Translational slide along fill-residual soil interface",
+    "trigger": "Intense/prolonged rainfall causing perched water table",
+    "depth_estimate_m": "2-5 (fill layer thickness)",
+    "predisposing_factors": [
+      "Steep hillside terrain",
+      "Thick fill deposits (2-5m) on natural slopes",
+      "Very soft fill (N=2-5) over competent residual soil",
+      "Irregular bedrock topography",
+      "Buried valley at SP13",
+      "Road loading"
+    ],
+    "confirmation_needed": [
+      "InSAR pre-event displacement data",
+      "Rainfall event quantification",
+      "Post-event imagery for extent mapping"
+    ]
+  },
+  "risk_assessment": {
+    "overall": "HIGH",
+    "factors": {
+      "soil_susceptibility": "HIGH",
+      "rainfall_exposure": "HIGH",
+      "infrastructure_exposure": "HIGH",
+      "groundwater_risk": "MODERATE-HIGH",
+      "retrogressive_potential": "MODERATE"
+    }
+  },
+  "insar_existing_sites": {
+    "note": "These are from Sikkim, India - methodology reference only",
+    "sites": ["Gonpatang", "Jhepi", "Kerang", "Mamring", "Yumesodong", "Chakung"],
+    "products_per_site": [
+      "Baseline_Pairs.png",
+      "PS_LOS_Velocity.png",
+      "PS_LOS_STL_Decompose.png",
+      "SBAS_LOS_Velocity.png",
+      "SBAS_LOS_Displacement_STL_2021.png",
+      "disp_ps.png",
+      "displaceme_tr_sbas.png"
+    ]
+  }
+}

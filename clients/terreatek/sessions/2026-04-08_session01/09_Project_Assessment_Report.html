@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoClaw - Terreatek Landslide Assessment | Project Assessment Report</title>
+    <style>
+        @media print {
+            body { font-size: 11pt; }
+            .page-break { page-break-before: always; }
+            table { page-break-inside: avoid; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1a5276;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #1a5276;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .header h2 {
+            color: #2980b9;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        .header .meta {
+            color: #666;
+            font-size: 14px;
+        }
+        h2 {
+            color: #1a5276;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+        h4 {
+            color: #1a6e8e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        th {
+            background-color: #1a5276;
+            color: white;
+            padding: 10px 8px;
+            text-align: left;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) { background-color: #f2f8fc; }
+        tr:hover { background-color: #e8f4f8; }
+        .critical { color: #c0392b; font-weight: bold; }
+        .high { color: #e67e22; font-weight: bold; }
+        .medium { color: #f39c12; }
+        .status-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .tag-critical { background: #fadbd8; color: #c0392b; }
+        .tag-high { background: #fdebd0; color: #e67e22; }
+        .tag-medium { background: #fef9e7; color: #f39c12; }
+        .tag-done { background: #d5f5e3; color: #27ae60; }
+        .tag-pending { background: #eaecee; color: #666; }
+        .callout {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .callout-danger {
+            background: #fdedec;
+            border-left: 4px solid #e74c3c;
+        }
+        .callout-info {
+            background: #eaf2f8;
+            border-left: 4px solid #3498db;
+        }
+        .flow-chart {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            white-space: pre-line;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #1a5276;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+        ul li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Landslide Assessment: Project Assessment Report</h1>
+    <h2>Alameda Eng. Gentil Forn, Jardim Gloria, Juiz de Fora, MG, Brazil</h2>
+    <div class="meta">
+        <strong>Prepared by:</strong> GeoClaw (Research Assistant Output) |
+        <strong>Client:</strong> Terreatek / Engesis Tecnologia |
+        <strong>Date:</strong> 2026-04-08
+    </div>
+</div>
+
+<h2>1. Project Overview</h2>
+<p>GeoClaw has been engaged by Terreatek (Engesis group) to deliver a geospatial product supporting their geotechnical expertise for a landslide event at Alameda Engenheiro Gentil Forn, Jardim Gloria neighborhood, Juiz de Fora, Minas Gerais, Brazil.</p>
+
+<div class="callout-info callout">
+    <strong>Approach:</strong> This is a single-scene analysis. ML-based InSAR/rainfall modeling is NOT feasible with this dataset. The approach is analytical/descriptive, building a causal understanding of the failure mechanism through integration of InSAR displacement data, rainfall analysis, post-event satellite imagery, and geotechnical investigation results.
+</div>
+
+<h2>2. Dataset Inventory</h2>
+
+<h3>2.1 Datasets In-Hand</h3>
+<table>
+    <tr><th>Dataset</th><th>Format</th><th>Size</th><th>Description</th></tr>
+    <tr><td>SPT Boring Report #004/26</td><td>PDF (PT + EN)</td><td>~3 MB</td><td>14 boreholes, 102.24m total drilled length</td></tr>
+    <tr><td>AutoCAD Road Surface Design</td><td>DWG</td><td>279 MB</td><td>Eng. Gentil Forn area engineering design</td></tr>
+    <tr><td>Digital Orthophoto Mosaic</td><td>ECW</td><td>44.5 MB</td><td>Area 06 high-resolution raster</td></tr>
+    <tr><td>Borehole Survey Points</td><td>KML</td><td>1.5 KB</td><td>FUROS GENTIL FORN - 2nd Phase (coordinates empty)</td></tr>
+    <tr><td>Landslide Point Locations</td><td>KMZ</td><td>793 bytes</td><td>Landslide event locations</td></tr>
+    <tr><td>Site Video</td><td>MP4</td><td>30.5 MB</td><td>Morro do Cristo footage</td></tr>
+    <tr><td>Reference InSAR Products</td><td>PNG</td><td>652 MB</td><td>6 sites from Sikkim, India (methodology examples)</td></tr>
+</table>
+
+<h3>2.2 Datasets Needed</h3>
+<table>
+    <tr><th>Dataset</th><th>Source</th><th>Status</th><th>Priority</th></tr>
+    <tr><td>InSAR for Juiz de Fora AOI</td><td>Sentinel-1 processing</td><td><span class="status-tag tag-pending">NOT PROCESSED</span></td><td><span class="status-tag tag-critical">CRITICAL</span></td></tr>
+    <tr><td>Hourly Rainfall</td><td>ERA5/CHIRPS via GEE</td><td><span class="status-tag tag-pending">NOT COLLECTED</span></td><td><span class="status-tag tag-high">HIGH</span></td></tr>
+    <tr><td>Post-Event Planet Imagery</td><td>Planet Explorer API</td><td><span class="status-tag tag-pending">NOT COLLECTED</span></td><td><span class="status-tag tag-high">HIGH</span></td></tr>
+</table>
+
+<div class="callout callout-danger">
+    <strong>Critical Gap:</strong> The 6 existing InSAR folders (Gonpatang, Jhepi, Kerang, Mamring, Yumesodong, Chakung) contain results for <strong>Sikkim, India</strong> (~28.0N, 88.6E), NOT for Juiz de Fora, Brazil. New InSAR processing is required.
+</div>
+
+<div class="page-break"></div>
+
+<h2>3. Geotechnical Analysis (SPT Report)</h2>
+
+<h3>3.1 Investigation Summary</h3>
+<table>
+    <tr><td><strong>Client</strong></td><td>ENGEDRAIN CONSTRUCOES LTDA</td></tr>
+    <tr><td><strong>Contractor</strong></td><td>GFM2 Empreendimentos Imobiliarios LTDA</td></tr>
+    <tr><td><strong>Location</strong></td><td>Alameda Eng. Gentil Forn, Jardim Gloria, Juiz de Fora, MG</td></tr>
+    <tr><td><strong>Date</strong></td><td>March 2026 (Phase 1)</td></tr>
+    <tr><td><strong>Standards</strong></td><td>NBR-6484 (SPT) and NBR-6502 (Soil Classification)</td></tr>
+    <tr><td><strong>Total Boreholes</strong></td><td>14 (SP01-SP14)</td></tr>
+    <tr><td><strong>Total Drilled Length</strong></td><td>102.24 meters</td></tr>
+</table>
+
+<h3>3.2 Subsurface Stratigraphy (3-Layer Model)</h3>
+
+<h4>Layer 1: FILL MATERIAL (0 to 2-5m depth)</h4>
+<ul>
+    <li><strong>Composition:</strong> Heterogeneous silty clay to sandy clay, yellow-brown with occasional gravel/rubble</li>
+    <li><strong>Consistency:</strong> Very soft to soft</li>
+    <li><strong>N(SPT):</strong> 2-12 (mostly 2-5)</li>
+    <li class="critical">CRITICAL: This is the primary weak layer driving landslide susceptibility</li>
+</ul>
+
+<h4>Layer 2: RESIDUAL SOIL / SAPROLITE (variable depth)</h4>
+<ul>
+    <li><strong>Composition:</strong> Clayey silt to silty clay, yellow to vermilion (lateritic weathering)</li>
+    <li><strong>Consistency:</strong> Medium to hard</li>
+    <li><strong>N(SPT):</strong> 4-32</li>
+</ul>
+
+<h4>Layer 3: ROCK DECOMPOSITION SOIL (base of all boreholes)</h4>
+<ul>
+    <li><strong>Composition:</strong> Very sandy silt, dark gray with yellow/white veins (weathered gneiss/granite)</li>
+    <li><strong>N(SPT):</strong> &gt;30, impenetrable</li>
+    <li><strong>Depth range:</strong> 1.05m (SP04) to 20.08m (SP13)</li>
+</ul>
+
+<h3>3.3 Borehole Summary</h3>
+<table>
+    <tr><th>BH ID</th><th>Depth (m)</th><th>Termination</th><th>Water Level</th><th>Key Observation</th></tr>
+    <tr><td>SP01</td><td>6.15</td><td>Impenetrable</td><td>Detected</td><td>Minor seepage 0.02-0.03m</td></tr>
+    <tr><td>SP02</td><td>2.06</td><td>Impenetrable</td><td>Not found</td><td>Shallow rock</td></tr>
+    <tr><td>SP03</td><td>5.80</td><td>Impenetrable</td><td>Not found</td><td>Very soft fill (N=2-3)</td></tr>
+    <tr><td>SP04</td><td>1.05</td><td>Impenetrable</td><td>Not found</td><td>Road pavement only</td></tr>
+    <tr><td>SP05</td><td>7.70</td><td>Impenetrable</td><td>Not found</td><td>Hard layer at 3.9-5m</td></tr>
+    <tr><td>SP06</td><td>2.65</td><td>Impenetrable</td><td>Not found</td><td>Very shallow profile</td></tr>
+    <tr><td>SP07</td><td>9.90</td><td>Impenetrable</td><td>Not found</td><td>Good fill-to-rock transition</td></tr>
+    <tr><td>SP08</td><td>5.60</td><td>Impenetrable</td><td>Not found</td><td>Soft fill dominant</td></tr>
+    <tr><td>SP09</td><td>8.80</td><td>Impenetrable</td><td>Detected</td><td>Minor seepage 0.01m</td></tr>
+    <tr><td>SP10</td><td>4.60</td><td>Impenetrable</td><td>Detected</td><td>Minor seepage 0.01m</td></tr>
+    <tr><td>SP11</td><td>11.10</td><td>Impenetrable</td><td>Not found</td><td>6m casing used</td></tr>
+    <tr><td>SP12</td><td>5.25</td><td>Impenetrable</td><td>Not found</td><td>Typical road corridor</td></tr>
+    <tr><td>SP13</td><td style="color:#c0392b;font-weight:bold">20.08</td><td>Penetration resistance</td><td>Not found</td><td class="critical">DEEPEST - buried valley/pocket</td></tr>
+    <tr><td>SP14</td><td>11.50</td><td>Impenetrable</td><td>Detected</td><td>Natural ground, minor seepage</td></tr>
+</table>
+
+<h3>3.4 Slope Stability Risk Factors</h3>
+<ol>
+    <li><strong>Significant fill deposits</strong> (up to 5m) on hillside terrain = prior earthworks on slopes</li>
+    <li><strong>Very soft fill</strong> (N=2-5) over competent residual soil = potential slip surfaces at interface</li>
+    <li><strong>Variable depth to rock</strong> (1-20m) = irregular drainage, differential settlement risk</li>
+    <li><strong>SP13 at 20.08m</strong> = buried valley acting as groundwater collector</li>
+    <li><strong>Low current water table</strong> but seasonal variation in tropical climate is expected</li>
+</ol>
+
+<div class="page-break"></div>
+
+<h2>4. Failure Mechanism Hypothesis</h2>
+
+<div class="flow-chart">
+<strong>PREDISPOSING FACTORS:</strong>
+  - Steep hillside terrain (Morro do Cristo area)
+  - Thick fill deposits (2-5m) on natural slopes
+  - Very soft fill material (N=2-5) over competent residual soil
+  - Irregular bedrock creating preferential drainage paths
+  - Buried valley at SP13 concentrating subsurface flow
+        |
+        v
+<strong>TRIGGERING FACTOR:</strong>
+  - Intense/prolonged rainfall event
+  - (Quantification pending - needs ERA5/CHIRPS data)
+        |
+        v
+<strong>FAILURE SEQUENCE:</strong>
+  1. Heavy rainfall infiltrates porous fill material
+  2. Perched water table develops at fill-residual soil interface
+  3. Pore water pressure increase reduces effective stress
+  4. Shear strength at contact drops below driving forces
+  5. Translational slide along fill-residual soil interface
+  6. Possible retrogressive failure expanding upslope
+</div>
+
+<h3>4.1 Evidence Supporting This Hypothesis</h3>
+<ul>
+    <li><strong>From SPT:</strong> Very soft fill (N=2-5) over competent base = classic translational slide setup</li>
+    <li><strong>From SPT:</strong> Water detected in 4 boreholes even during investigation period</li>
+    <li><strong>From Context:</strong> News articles reference extreme rainfall events (533mm in 6 hours) in Brazil</li>
+    <li><strong>From Geology:</strong> Gneissic/granitic terrain produces lateritic soils prone to landslides</li>
+    <li><strong>From InSAR (analogy):</strong> Mamring site shows displacement-rainfall correlation</li>
+</ul>
+
+<h2>5. Risk Assessment Summary</h2>
+<table>
+    <tr><th>Factor</th><th>Rating</th><th>Justification</th></tr>
+    <tr><td>Soil Susceptibility</td><td class="critical">HIGH</td><td>Very soft fill on steep slopes</td></tr>
+    <tr><td>Rainfall Exposure</td><td class="critical">HIGH</td><td>Tropical climate, intense wet season</td></tr>
+    <tr><td>Infrastructure Exposure</td><td class="critical">HIGH</td><td>Road and buildings on/adjacent to slope</td></tr>
+    <tr><td>Groundwater Risk</td><td class="high">MODERATE-HIGH</td><td>Low current levels but seasonal variation</td></tr>
+    <tr><td>Retrogressive Potential</td><td class="medium">MODERATE</td><td>Depends on slope geometry and fill extent</td></tr>
+</table>
+
+<h2>6. Action Items</h2>
+<table>
+    <tr><th>#</th><th>Task</th><th>Tool/Platform</th><th>Priority</th><th>Status</th></tr>
+    <tr><td>1</td><td>Process InSAR for Juiz de Fora AOI</td><td>ISCE2/StaMPS/MintPy</td><td><span class="status-tag tag-critical">CRITICAL</span></td><td><span class="status-tag tag-pending">Not started</span></td></tr>
+    <tr><td>2</td><td>GEE script for ERA5/CHIRPS rainfall</td><td>Google Earth Engine</td><td><span class="status-tag tag-high">HIGH</span></td><td><span class="status-tag tag-pending">Not started</span></td></tr>
+    <tr><td>3</td><td>Planet post-event imagery query</td><td>Planet Explorer API</td><td><span class="status-tag tag-high">HIGH</span></td><td><span class="status-tag tag-pending">Not started</span></td></tr>
+    <tr><td>4</td><td>SPT data visualization (Python)</td><td>matplotlib/plotly</td><td><span class="status-tag tag-medium">MEDIUM</span></td><td><span class="status-tag tag-pending">Not started</span></td></tr>
+    <tr><td>5</td><td>Report skeleton document</td><td>Word/LaTeX</td><td><span class="status-tag tag-medium">MEDIUM</span></td><td><span class="status-tag tag-pending">Not started</span></td></tr>
+    <tr><td>6</td><td>Fix KML borehole coordinates</td><td>Manual/GIS</td><td><span class="status-tag tag-pending">LOW</span></td><td><span class="status-tag tag-pending">Not started</span></td></tr>
+</table>
+
+<div class="footer">
+    <p><strong>GeoClaw Research Assistant Output - Session 01</strong></p>
+    <p>Generated: 2026-04-08 | Confidential - Prepared for internal use by GeoClaw & Terreatek</p>
+    <p><em>To save as PDF: Open this file in a browser and use Print &gt; Save as PDF</em></p>
+</div>
+
+</body>
+</html>

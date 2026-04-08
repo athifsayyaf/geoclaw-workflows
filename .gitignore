@@ -1,0 +1,22 @@
+# Generated binary files (regenerate with scripts)
+*.pdf
+*.docx
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Large data files (keep in local project folder, not in git)
+*.tif
+*.tiff
+*.ecw
+*.dwg
+*.kmz
+*.mp4
+*.avi

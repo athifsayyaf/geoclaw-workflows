@@ -1,0 +1,77 @@
+================================================================================
+GEOCLAW - TERREATEK LANDSLIDE ASSESSMENT
+EXECUTIVE SUMMARY
+================================================================================
+
+Project:    Landslide Analysis - Alameda Eng. Gentil Forn
+Location:   Jardim Gloria, Juiz de Fora, Minas Gerais, Brazil
+Client:     Terreatek / Engesis Tecnologia
+Date:       2026-04-08
+Status:     In Progress (Data collection phase)
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. GEOTECHNICAL (from SPT Report #004/26):
+   - 14 boreholes drilled, 102.24m total
+   - 3-layer profile: Fill (soft) -> Residual Soil -> Rock Decomposition
+   - Fill layer is 2-5m thick with N(SPT) = 2-5 (VERY SOFT)
+   - Fill over competent residual soil = classic translational slide setup
+   - Water detected in 4/14 boreholes (SP01, SP09, SP10, SP14)
+   - SP13 at 20.08m depth = buried valley/deep weathering pocket
+   - Variable bedrock depth (1-20m) = irregular drainage patterns
+
+2. INSAR STATUS:
+   - Existing InSAR products are for Sikkim, India (6 sites) = examples only
+   - NO InSAR processed for Juiz de Fora, Brazil AOI yet
+   - This is the CRITICAL data gap
+
+3. FAILURE MECHANISM (preliminary):
+   - Type: Translational slide along fill-residual soil interface
+   - Trigger: Intense rainfall causing perched water table in fill
+   - Depth: 2-5m (fill layer thickness)
+   - Risk Level: HIGH
+
+================================================================================
+DATA GAPS (ACTION REQUIRED)
+================================================================================
+
+CRITICAL:  InSAR processing for Juiz de Fora AOI (Sentinel-1)
+HIGH:      Hourly rainfall data (ERA5/CHIRPS via Google Earth Engine)
+HIGH:      Post-event Planet satellite imagery
+MEDIUM:    SPT data visualization and cross-sections
+LOW:       Borehole KML coordinates (currently empty)
+
+================================================================================
+DELIVERABLES PLANNED
+================================================================================
+
+1. Client report (30-40 pages + appendices)
+   - InSAR displacement maps and time series
+   - Rainfall analysis (intensity, duration, cumulative)
+   - Post-event landslide inventory
+   - Integrated failure mechanism analysis
+   - Monitoring recommendations
+
+2. Data products
+   - InSAR velocity maps (PS + SBAS)
+   - Rainfall time series and statistics
+   - Change detection maps
+   - Borehole cross-sections
+
+================================================================================
+APPROACH NOTE
+================================================================================
+
+Single-scene dataset = NO ML-based modeling possible.
+Approach is analytical/descriptive:
+- Show InSAR results for the AOI
+- Quantify rainfall amounts
+- Map other landslides (if any) from Planet imagery
+- Develop understanding of WHY the failure occurred
+- Integrate remote sensing evidence with geotechnical data
+
+================================================================================
+Generated: 2026-04-08 | GeoClaw Research Assistant - Session 01
+================================================================================
