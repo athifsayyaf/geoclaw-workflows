@@ -2,7 +2,7 @@
 
 **Client:** Terreatek / Engesis Tecnologia (www.engesistecnologia.com.br)  
 **Site:** Alameda Eng. Gentil Forn, Jardim Gloria, Juiz de Fora, MG, Brazil  
-**Coordinates:** ~-21.76S, -43.35W  
+**Coordinates:** -26.634742°S, -48.682521°W (Santa Catarina, Brazil)  
 **Started:** 2026-04-08  
 **Status:** In Progress - Data Collection Phase  
 
@@ -33,7 +33,8 @@ GeoClaw is delivering a remote sensing + geotechnical assessment for a landslide
 | Orthophoto (ECW) | HAVE | - | Area 06 |
 | Landslide Points (KMZ) | HAVE | - | Event locations |
 | InSAR for Juiz de Fora | MISSING | CRITICAL | Need to process Sentinel-1 |
-| Hourly Rainfall | MISSING | HIGH | ERA5/CHIRPS via GEE |
+| Hourly Rainfall | GEE SCRIPT READY | HIGH | ERA5-Land + CHIRPS script written, pending run |
+| Landslide Date | CONFIRMED | - | **February 23, 2026** |
 | Planet Post-Event Imagery | MISSING | HIGH | Check for additional landslides |
 | Borehole KML Coordinates | INCOMPLETE | LOW | KML has empty coords |
 
@@ -52,7 +53,7 @@ GeoClaw is delivering a remote sensing + geotechnical assessment for a landslide
 ## Next Steps
 
 - [ ] Process Sentinel-1 InSAR for Juiz de Fora AOI
-- [ ] Write GEE script for ERA5/CHIRPS hourly rainfall
+- [x] Write GEE script for ERA5/CHIRPS hourly rainfall (**DONE** - `scripts/rainfall_analysis_gee.js`)
 - [ ] Query Planet for post-event imagery
 - [ ] Create SPT borehole visualization (Python cross-sections)
 - [ ] Draft client report
