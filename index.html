@@ -4,424 +4,478 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoClaw — Satellite Intelligence for Ground Safety</title>
-    <meta name="description" content="GeoClaw delivers satellite-based monitoring, InSAR displacement analysis, and AI-powered early warning systems for landslides, infrastructure, and geotechnical risk management.">
+    <meta name="description" content="GeoClaw builds satellite intelligence systems for landslide monitoring, InSAR deformation analysis, and real-time early warning powered by machine learning.">
     <link rel="icon" type="image/png" href="assets/images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
-<nav class="navbar" id="navbar">
-    <div class="container nav-container">
-        <a href="#" class="nav-logo">
-            <img src="assets/images/logo.png" alt="GeoClaw Logo">
+<!-- ============================================================ -->
+<!-- NAVIGATION                                                    -->
+<!-- ============================================================ -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#home" class="nav-brand">
+            <img src="assets/images/logo.png" alt="GeoClaw">
         </a>
-        <div class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
+        <div class="nav-menu" id="navMenu">
+            <a href="#work">Work</a>
             <a href="#services">Services</a>
-            <a href="#technology">Technology</a>
-            <a href="#case-studies">Case Studies</a>
-            <a href="#contact" class="btn btn-nav">Get in Touch</a>
+            <a href="#approach">Approach</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Let's talk <i class="fas fa-arrow-right"></i></a>
         </div>
         <button class="nav-toggle" id="navToggle" aria-label="Menu">
-            <span></span><span></span><span></span>
+            <span></span><span></span>
         </button>
     </div>
 </nav>
 
-<!-- ========== HERO ========== -->
+<!-- ============================================================ -->
+<!-- HERO                                                          -->
+<!-- ============================================================ -->
 <section class="hero" id="home">
-    <div class="hero-bg">
-        <img src="assets/images/hero-bg.png" alt="Satellite monitoring infrastructure">
-        <div class="hero-overlay"></div>
+    <div class="hero-marquee">
+        <div class="marquee-track">
+            <span>SATELLITE INTELLIGENCE</span>
+            <span class="marquee-dot">●</span>
+            <span>LANDSLIDE MONITORING</span>
+            <span class="marquee-dot">●</span>
+            <span>INSAR DEFORMATION</span>
+            <span class="marquee-dot">●</span>
+            <span>EARLY WARNING</span>
+            <span class="marquee-dot">●</span>
+            <span>MACHINE LEARNING</span>
+            <span class="marquee-dot">●</span>
+            <span>SATELLITE INTELLIGENCE</span>
+            <span class="marquee-dot">●</span>
+            <span>LANDSLIDE MONITORING</span>
+            <span class="marquee-dot">●</span>
+            <span>INSAR DEFORMATION</span>
+            <span class="marquee-dot">●</span>
+            <span>EARLY WARNING</span>
+            <span class="marquee-dot">●</span>
+            <span>MACHINE LEARNING</span>
+            <span class="marquee-dot">●</span>
+        </div>
     </div>
+
     <div class="container hero-content">
-        <div class="hero-badge">Satellite Intelligence for Ground Safety</div>
-        <h1>From Earth Observation<br>to Real-World Decisions</h1>
-        <p class="hero-sub">We monitor ground movement from space — detecting landslides, subsidence, and infrastructure risks <strong>before they become disasters</strong>.</p>
-        <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary btn-lg">Request a Consultation</a>
-            <a href="#services" class="btn btn-outline btn-lg">Explore Our Services</a>
+        <div class="hero-meta">
+            <span class="hero-badge"><span class="pulse"></span> Now processing NISAR L-band data</span>
+            <span class="hero-location">Global · Est. 2024</span>
         </div>
-        <div class="hero-stats">
+
+        <h1 class="hero-title">
+            GeoClaw <em class="serif">crafts</em><br>
+            satellite intelligence<br>
+            for <em class="serif">ground safety.</em>
+        </h1>
+
+        <div class="hero-bottom">
+            <p class="hero-desc">
+                We turn petabytes of satellite data into actionable risk intelligence —
+                monitoring slopes, infrastructure and ecosystems from space,
+                <strong>before disasters happen.</strong>
+            </p>
+            <a href="#contact" class="hero-cta">
+                <span class="cta-label">Start a project</span>
+                <span class="cta-arrow"><i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STATS STRIP                                                   -->
+<!-- ============================================================ -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
             <div class="stat">
-                <span class="stat-num">mm</span>
-                <span class="stat-label">Precision displacement detection</span>
+                <div class="stat-num">mm</div>
+                <div class="stat-label">Precision displacement<br>detection</div>
             </div>
             <div class="stat">
-                <span class="stat-num">24/7</span>
-                <span class="stat-label">Satellite monitoring coverage</span>
+                <div class="stat-num">8</div>
+                <div class="stat-label">Days of advance<br>landslide warning</div>
             </div>
             <div class="stat">
-                <span class="stat-num">8 days</span>
-                <span class="stat-label">Advance landslide warning</span>
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Satellite data<br>sources integrated</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">24/7</div>
+                <div class="stat-label">Automated risk<br>monitoring</div>
             </div>
         </div>
     </div>
-    <div class="hero-scroll">
-        <a href="#about"><i class="fas fa-chevron-down"></i></a>
-    </div>
 </section>
 
-<!-- ========== ABOUT ========== -->
-<section class="section" id="about">
+<!-- ============================================================ -->
+<!-- WORK / PORTFOLIO GRID                                         -->
+<!-- ============================================================ -->
+<section class="work" id="work">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Who We Are</span>
-            <h2>Built on Accuracy. Driven by Timelines. Trusted for Results.</h2>
-            <p>GeoClaw is a geospatial intelligence company specializing in satellite-based ground monitoring. We combine InSAR technology, satellite imagery, and machine learning to deliver actionable risk intelligence for infrastructure, slopes, and communities.</p>
+            <span class="eyebrow">Selected Work</span>
+            <h2 class="section-title">
+                Real projects. Real impact.<br>
+                <em class="serif">From Earth Observation</em> to Real-World Decisions.
+            </h2>
         </div>
-        <div class="grid-3">
-            <div class="card card-icon">
-                <div class="card-ico"><i class="fas fa-satellite"></i></div>
-                <h3>Satellite-First Approach</h3>
-                <p>We use freely available satellite data (Sentinel-1, Sentinel-2, ERA5) — no ground equipment needed. Monitoring starts immediately, anywhere on Earth.</p>
-            </div>
-            <div class="card card-icon">
-                <div class="card-ico"><i class="fas fa-brain"></i></div>
-                <h3>AI-Powered Analysis</h3>
-                <p>Machine learning algorithms classify risk levels automatically. Our systems detected landslide conditions 8 days before the Morro do Cristo event.</p>
-            </div>
-            <div class="card card-icon">
-                <div class="card-ico"><i class="fas fa-bell"></i></div>
-                <h3>Real-Time Alerts</h3>
-                <p>Automated early warning via SMS and email when rainfall or displacement thresholds are crossed. From data to decision in minutes, not weeks.</p>
-            </div>
+
+        <div class="work-grid">
+            <!-- Tile 1 - Landslide -->
+            <a href="#contact" class="tile tile-lg tile-dark">
+                <div class="tile-label">
+                    <span>01 / LANDSLIDE</span>
+                    <span>2026</span>
+                </div>
+                <div class="tile-center">
+                    <h3 class="tile-brand">Morro<br>do Cristo</h3>
+                    <div class="tile-tag">Predicted 8 days in advance</div>
+                </div>
+                <div class="tile-bottom">
+                    <span>View case study</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Tile 2 - InSAR green -->
+            <a href="#contact" class="tile tile-md tile-green">
+                <div class="tile-label">
+                    <span>02 / INSAR</span>
+                    <span>Sentinel-1</span>
+                </div>
+                <div class="tile-center">
+                    <div class="tile-stat">mm</div>
+                    <div class="tile-stat-label">Displacement<br>precision</div>
+                </div>
+            </a>
+
+            <!-- Tile 3 - NISAR -->
+            <a href="#contact" class="tile tile-md tile-gold">
+                <div class="tile-label">
+                    <span>03 / NISAR</span>
+                    <span>L-BAND</span>
+                </div>
+                <div class="tile-center">
+                    <h3 class="tile-brand-sm">NISAR</h3>
+                    <p class="tile-text-sm">L-band SAR processing<br>for vegetated terrain</p>
+                </div>
+            </a>
+
+            <!-- Tile 4 - Rainfall -->
+            <a href="#contact" class="tile tile-md tile-blue">
+                <div class="tile-label">
+                    <span>04 / RAINFALL</span>
+                    <span>ERA5 · CHIRPS</span>
+                </div>
+                <div class="tile-center">
+                    <div class="tile-stat">188<span class="small">mm</span></div>
+                    <div class="tile-stat-label">6-day critical<br>threshold</div>
+                </div>
+            </a>
+
+            <!-- Tile 5 - Vegetation -->
+            <a href="#contact" class="tile tile-md tile-orange">
+                <div class="tile-label">
+                    <span>05 / VEGETATION</span>
+                    <span>Sentinel-2</span>
+                </div>
+                <div class="tile-center">
+                    <div class="tile-stat">10yr</div>
+                    <div class="tile-stat-label">NDVI monitoring<br>archive</div>
+                </div>
+            </a>
+
+            <!-- Tile 6 - ML -->
+            <a href="#contact" class="tile tile-md tile-purple">
+                <div class="tile-label">
+                    <span>06 / ML</span>
+                    <span>Risk AI</span>
+                </div>
+                <div class="tile-center">
+                    <h3 class="tile-brand-sm">Isolation<br>Forest</h3>
+                    <p class="tile-text-sm">ML-based anomaly<br>detection</p>
+                </div>
+            </a>
+
+            <!-- Tile 7 - Geotech wide -->
+            <a href="#contact" class="tile tile-wide tile-light">
+                <div class="tile-label">
+                    <span>07 / GEOTECH</span>
+                    <span>SPT · HYDRO · SLOPE</span>
+                </div>
+                <div class="tile-center">
+                    <h3 class="tile-brand">Geo-Digital Twin</h3>
+                    <p class="tile-text">Integrated monitoring platform fusing InSAR, rainfall, vegetation & in-situ geotechnical data into a single decision dashboard.</p>
+                </div>
+                <div class="tile-bottom">
+                    <span>Explore the platform</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- ========== PROBLEMS WE SOLVE ========== -->
-<section class="section section-dark" id="problems">
-    <div class="container">
-        <div class="split-content">
-            <div class="split-text">
-                <span class="section-tag tag-light">Problems We Solve</span>
-                <h2>Every Slope, Structure, and Shoreline Has a Story. We Read It from Space.</h2>
-                <ul class="check-list">
-                    <li><i class="fas fa-check-circle"></i> Landslide &amp; subsidence risk assessment</li>
-                    <li><i class="fas fa-check-circle"></i> Infrastructure monitoring (bridges, railways, dams)</li>
-                    <li><i class="fas fa-check-circle"></i> Construction &amp; excavation deformation tracking</li>
-                    <li><i class="fas fa-check-circle"></i> Urban encroachment &amp; land use change detection</li>
-                    <li><i class="fas fa-check-circle"></i> Mining area &amp; tailings dam monitoring</li>
-                    <li><i class="fas fa-check-circle"></i> Runway &amp; pavement deformation analysis</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary">Discuss Your Project</a>
-            </div>
-            <div class="split-image">
-                <img src="assets/images/problems.png" alt="Problems GeoClaw solves">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== SERVICES ========== -->
-<section class="section" id="services">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Our Services</span>
-            <h2>End-to-End Geospatial Intelligence</h2>
-            <p>From raw satellite data to boardroom-ready risk reports — we handle the entire chain.</p>
-        </div>
-        <div class="grid-3">
-            <div class="card card-service">
-                <div class="card-accent accent-blue"></div>
-                <div class="card-ico-sm"><i class="fas fa-wave-square"></i></div>
-                <h3>InSAR Displacement Monitoring</h3>
-                <p>Millimetric ground movement detection using Persistent Scatterer (PS) and Small Baseline Subset (SBAS) InSAR processing. Sentinel-1 C-band and ALOS-2 L-band.</p>
-                <ul class="card-features">
-                    <li>LOS velocity maps</li>
-                    <li>Displacement time series</li>
-                    <li>STL trend decomposition</li>
-                    <li>Baseline pair optimization</li>
-                </ul>
-            </div>
-            <div class="card card-service">
-                <div class="card-accent accent-green"></div>
-                <div class="card-ico-sm"><i class="fas fa-cloud-rain"></i></div>
-                <h3>Rainfall &amp; Climate Analysis</h3>
-                <p>Satellite rainfall monitoring using ERA5-Land, CHIRPS, and GPM IMERG. Threshold analysis for landslide early warning with scientifically calibrated alert levels.</p>
-                <ul class="card-features">
-                    <li>Hourly rainfall tracking</li>
-                    <li>I-D threshold analysis</li>
-                    <li>Antecedent saturation models</li>
-                    <li>Automated WATCH/WARNING/CRITICAL alerts</li>
-                </ul>
-            </div>
-            <div class="card card-service">
-                <div class="card-accent accent-orange"></div>
-                <div class="card-ico-sm"><i class="fas fa-leaf"></i></div>
-                <h3>Vegetation &amp; Change Detection</h3>
-                <p>Sentinel-2 multispectral analysis for land cover change, vegetation health monitoring, and post-event damage assessment across large areas.</p>
-                <ul class="card-features">
-                    <li>NDVI/EVI/NDMI indices</li>
-                    <li>Pre/post-event comparison</li>
-                    <li>Landslide scar mapping</li>
-                    <li>10-year vegetation trends</li>
-                </ul>
-            </div>
-            <div class="card card-service">
-                <div class="card-accent accent-red"></div>
-                <div class="card-ico-sm"><i class="fas fa-robot"></i></div>
-                <h3>Machine Learning Risk Classification</h3>
-                <p>AI-powered anomaly detection and risk classification. Isolation Forest, K-Means clustering, and intensity-duration threshold models trained on site-specific data.</p>
-                <ul class="card-features">
-                    <li>Automated risk scoring</li>
-                    <li>Anomaly detection (Isolation Forest)</li>
-                    <li>Risk zone classification (K-Means)</li>
-                    <li>Predictive threshold calibration</li>
-                </ul>
-            </div>
-            <div class="card card-service">
-                <div class="card-accent accent-purple"></div>
-                <div class="card-ico-sm"><i class="fas fa-chart-line"></i></div>
-                <h3>Geo-Digital Twin Platform</h3>
-                <p>Integrated monitoring dashboard combining InSAR, rainfall, vegetation, and geotechnical data into a single real-time risk intelligence platform.</p>
-                <ul class="card-features">
-                    <li>Real-time risk dashboard</li>
-                    <li>Multi-sensor data fusion</li>
-                    <li>Automated reporting</li>
-                    <li>API integration with existing systems</li>
-                </ul>
-            </div>
-            <div class="card card-service">
-                <div class="card-accent accent-teal"></div>
-                <div class="card-ico-sm"><i class="fas fa-file-alt"></i></div>
-                <h3>Geotechnical Support &amp; Reporting</h3>
-                <p>Technical reports integrating satellite analysis with SPT borehole data, slope stability assessment, and geotechnical recommendations for your engineering team.</p>
-                <ul class="card-features">
-                    <li>SPT data interpretation</li>
-                    <li>Hydraulic conductivity estimation</li>
-                    <li>Failure mechanism analysis</li>
-                    <li>Monitoring recommendations</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== TECHNOLOGY ========== -->
-<section class="section section-light" id="technology">
+<!-- ============================================================ -->
+<!-- SERVICES                                                      -->
+<!-- ============================================================ -->
+<section class="services" id="services">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Our Technology</span>
-            <h2>How It Works</h2>
-            <p>From satellite to alert in four steps — no ground equipment required.</p>
+            <span class="eyebrow">What We Do</span>
+            <h2 class="section-title">
+                End-to-end <em class="serif">geospatial intelligence.</em><br>
+                From raw satellite data to boardroom-ready decisions.
+            </h2>
         </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-num">01</div>
-                <div class="timeline-content">
-                    <h3>Data Acquisition</h3>
-                    <p>SAR imagery (Sentinel-1), optical imagery (Sentinel-2), and meteorological data (ERA5, CHIRPS) are automatically collected for your area of interest.</p>
+
+        <div class="service-list">
+            <div class="service-row">
+                <div class="service-num">01</div>
+                <div class="service-content">
+                    <h3>InSAR Displacement Monitoring</h3>
+                    <p>Millimetric ground movement detection using Persistent Scatterer (PS) and Small Baseline Subset (SBAS) interferometry. Sentinel-1 C-band, NISAR L-band.</p>
                 </div>
+                <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-num">02</div>
-                <div class="timeline-content">
-                    <h3>Processing &amp; Analysis</h3>
-                    <p>InSAR displacement maps, vegetation indices, and rainfall accumulations are computed using our cloud-based processing pipeline. Machine learning classifies risk levels.</p>
+
+            <div class="service-row">
+                <div class="service-num">02</div>
+                <div class="service-content">
+                    <h3>Rainfall &amp; Hydrometeorological Analysis</h3>
+                    <p>ERA5-Land hourly, CHIRPS daily, GPM IMERG. Intensity-Duration threshold calibration and automated WATCH / WARNING / CRITICAL alerts.</p>
                 </div>
+                <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-num">03</div>
-                <div class="timeline-content">
-                    <h3>Geo-Digital Twin</h3>
-                    <p>All data layers are fused into an integrated digital twin of your site — displacement trends, rainfall patterns, vegetation health, and risk scores on a single dashboard.</p>
+
+            <div class="service-row">
+                <div class="service-num">03</div>
+                <div class="service-content">
+                    <h3>Vegetation &amp; Change Detection</h3>
+                    <p>Sentinel-2 multispectral analysis. NDVI / EVI / NDMI / BSI time series. Pre &amp; post-event damage assessment at scale.</p>
                 </div>
+                <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-num">04</div>
-                <div class="timeline-content">
-                    <h3>Alerts &amp; Decisions</h3>
-                    <p>When thresholds are crossed, automated alerts go to your team via SMS and email. Monthly reports and on-demand analysis keep stakeholders informed.</p>
+
+            <div class="service-row">
+                <div class="service-num">04</div>
+                <div class="service-content">
+                    <h3>Machine Learning Risk Classification</h3>
+                    <p>Isolation Forest anomaly detection, K-Means clustering, Bayesian uncertainty quantification. Site-calibrated models with explainable outputs.</p>
                 </div>
+                <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
             </div>
-        </div>
-        <div class="tech-image">
-            <img src="assets/images/dashboard.png" alt="GeoClaw InSAR Processing Pipeline">
+
+            <div class="service-row">
+                <div class="service-num">05</div>
+                <div class="service-content">
+                    <h3>Geo-Digital Twin Platform</h3>
+                    <p>Integrated monitoring dashboards fusing InSAR, rainfall, vegetation &amp; geotechnical data. Real-time APIs, SMS/email alerts, web dashboards.</p>
+                </div>
+                <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+
+            <div class="service-row">
+                <div class="service-num">06</div>
+                <div class="service-content">
+                    <h3>Geotechnical Support &amp; Reporting</h3>
+                    <p>SPT interpretation, hydraulic conductivity estimation, failure mechanism analysis. Technical reports for your engineering team.</p>
+                </div>
+                <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ========== CASE STUDIES ========== -->
-<section class="section" id="case-studies">
+<!-- ============================================================ -->
+<!-- APPROACH / PROCESS                                            -->
+<!-- ============================================================ -->
+<section class="approach" id="approach">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Case Studies</span>
-            <h2>Proven Results, Real Impact</h2>
-        </div>
-        <div class="case-featured">
-            <div class="case-image">
-                <img src="assets/images/casestudy-morro.jpg" alt="Morro do Cristo landslide">
-                <div class="case-badge">Featured Case Study</div>
-            </div>
-            <div class="case-content">
-                <h3>Morro do Cristo Landslide — Juiz de Fora, Brazil</h3>
-                <p class="case-date">February 2026</p>
-                <p>GeoClaw's satellite analysis of the February 23, 2026 landslide demonstrated that the event was <strong>predictable 8 days in advance</strong> using satellite rainfall data and machine learning.</p>
-                <div class="case-stats">
-                    <div class="case-stat">
-                        <span class="case-num">188mm</span>
-                        <span>in 6 days triggered failure</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="case-num">8 days</span>
-                        <span>of advance warning possible</span>
-                    </div>
-                    <div class="case-stat">
-                        <span class="case-num">78%</span>
-                        <span>vegetation loss confirmed by satellite</span>
-                    </div>
-                </div>
-                <div class="case-methods">
-                    <span class="method-tag">InSAR Monitoring</span>
-                    <span class="method-tag">Rainfall Threshold Analysis</span>
-                    <span class="method-tag">ML Risk Classification</span>
-                    <span class="method-tag">Vegetation Change Detection</span>
-                </div>
-            </div>
+            <span class="eyebrow">How We Work</span>
+            <h2 class="section-title">
+                A <em class="serif">simple</em> four-step process.<br>
+                No hardware. No on-site equipment. Just answers.
+            </h2>
         </div>
 
-        <div class="grid-3" style="margin-top: 3rem;">
-            <div class="card card-case">
-                <img src="assets/images/ml-demo.png" alt="ML Risk Classification">
-                <div class="card-body">
-                    <h3>ML-Based Early Warning System</h3>
-                    <p>K-Means clustering and Isolation Forest algorithms classify 90 days of rainfall into Safe, Elevated, and Critical risk zones — enabling automated alerts.</p>
-                </div>
+        <div class="approach-grid">
+            <div class="approach-card">
+                <div class="approach-num">01</div>
+                <h3>Acquire</h3>
+                <p>Satellite data streams in automatically from Sentinel-1, Sentinel-2, NISAR, ERA5 and CHIRPS via cloud processing.</p>
+                <div class="approach-line"></div>
             </div>
-            <div class="card card-case">
-                <img src="assets/images/casestudy-drone.jpg" alt="Drone landslide documentation">
-                <div class="card-body">
-                    <h3>Post-Event Damage Assessment</h3>
-                    <p>Satellite + drone imagery integration for rapid damage mapping, landslide inventory, and recovery monitoring across large areas.</p>
-                </div>
+
+            <div class="approach-card">
+                <div class="approach-num">02</div>
+                <h3>Process</h3>
+                <p>InSAR displacement, vegetation indices, rainfall accumulations computed through reproducible Python pipelines.</p>
+                <div class="approach-line"></div>
             </div>
-            <div class="card card-case">
-                <img src="assets/images/satellite-brazil.jpg" alt="NASA satellite view">
-                <div class="card-body">
-                    <h3>Regional Landslide Mapping</h3>
-                    <p>Landsat and Sentinel-2 satellite imagery for regional-scale landslide susceptibility assessment and land cover change analysis.</p>
-                </div>
+
+            <div class="approach-card">
+                <div class="approach-num">03</div>
+                <h3>Interpret</h3>
+                <p>Machine learning classifies risk. Bayesian uncertainty quantifies confidence. Thresholds trigger alerts.</p>
+                <div class="approach-line"></div>
+            </div>
+
+            <div class="approach-card">
+                <div class="approach-num">04</div>
+                <h3>Deliver</h3>
+                <p>Automated alerts via SMS &amp; email. Monthly reports. Interactive dashboards. Board-ready PDFs.</p>
+                <div class="approach-line"></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ========== CTA ========== -->
-<section class="section section-cta">
+<!-- ============================================================ -->
+<!-- ABOUT                                                         -->
+<!-- ============================================================ -->
+<section class="about" id="about">
     <div class="container">
-        <h2>Every Month Without Monitoring Is a Month We're Gambling with Safety.</h2>
-        <p>The technology exists. The satellite data is free. Let's put it to work.</p>
-        <a href="#contact" class="btn btn-white btn-lg">Start Your Monitoring Project</a>
-    </div>
-</section>
-
-<!-- ========== CONTACT ========== -->
-<section class="section section-light" id="contact">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Get in Touch</span>
-            <h2>Let's Discuss Your Monitoring Needs</h2>
-        </div>
-        <div class="grid-2">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>athifsayyaf@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <div>
-                        <h4>Coverage</h4>
-                        <p>Global — satellite monitoring works anywhere on Earth</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-rocket"></i>
-                    <div>
-                        <h4>Getting Started</h4>
-                        <p>Share your area of interest and we'll deliver an initial assessment within 2 weeks.</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <div class="about-grid">
+            <div class="about-text">
+                <span class="eyebrow">About GeoClaw</span>
+                <h2 class="section-title">
+                    We think like <em class="serif">engineers.</em><br>
+                    We act like <em class="serif">scientists.</em><br>
+                    We deliver like a startup.
+                </h2>
+                <p class="about-para">
+                    GeoClaw is a geospatial intelligence consultancy specialising in satellite-based ground monitoring. We combine InSAR technology, optical imagery, hydrometeorological data and machine learning to deliver actionable risk intelligence for infrastructure, slopes and communities.
+                </p>
+                <p class="about-para">
+                    Our team has backgrounds in InSAR processing, geotechnical engineering, remote sensing and machine learning. We publish our methods. We open-source our code. We explain our findings in plain language — because decisions depend on trust, not jargon.
+                </p>
+                <div class="about-tags">
+                    <span>InSAR</span>
+                    <span>NISAR L-band</span>
+                    <span>Sentinel-1 &amp; 2</span>
+                    <span>ERA5</span>
+                    <span>CHIRPS</span>
+                    <span>Python</span>
+                    <span>Google Earth Engine</span>
+                    <span>Machine Learning</span>
                 </div>
             </div>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+            <div class="about-visual">
+                <div class="about-card about-card-1">
+                    <div class="about-card-num">mm</div>
+                    <div class="about-card-label">Precision</div>
                 </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email Address" required>
+                <div class="about-card about-card-2">
+                    <div class="about-card-num">8</div>
+                    <div class="about-card-label">Days warning</div>
                 </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Organization">
+                <div class="about-card about-card-3">
+                    <div class="about-card-num">10+</div>
+                    <div class="about-card-label">Data sources</div>
                 </div>
-                <div class="form-group">
-                    <select>
-                        <option value="">Select Service Interest</option>
-                        <option>InSAR Displacement Monitoring</option>
-                        <option>Rainfall & Landslide Early Warning</option>
-                        <option>Vegetation & Change Detection</option>
-                        <option>Geo-Digital Twin Platform</option>
-                        <option>Geotechnical Support</option>
-                        <option>Other / General Inquiry</option>
-                    </select>
+                <div class="about-card about-card-4">
+                    <div class="about-card-num">24/7</div>
+                    <div class="about-card-label">Monitoring</div>
                 </div>
-                <div class="form-group">
-                    <textarea placeholder="Tell us about your project or area of interest..." rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message</button>
-            </form>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- ============================================================ -->
+<!-- CTA                                                           -->
+<!-- ============================================================ -->
+<section class="cta" id="contact">
+    <div class="container">
+        <span class="eyebrow light">Get In Touch</span>
+        <h2 class="cta-title">
+            Let's build something<br>
+            <em class="serif">that matters.</em>
+        </h2>
+        <p class="cta-desc">
+            Every month without monitoring is a month we're gambling with safety.<br>
+            Tell us about your project — we'll deliver an initial assessment within two weeks.
+        </p>
+
+        <div class="cta-contact">
+            <a href="mailto:athifsayyaf@gmail.com" class="cta-email">
+                <span>athifsayyaf@gmail.com</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="cta-meta">
+            <div class="cta-meta-item">
+                <span class="cta-meta-label">Coverage</span>
+                <span class="cta-meta-value">Global</span>
+            </div>
+            <div class="cta-meta-item">
+                <span class="cta-meta-label">Response time</span>
+                <span class="cta-meta-value">24 hours</span>
+            </div>
+            <div class="cta-meta-item">
+                <span class="cta-meta-label">First delivery</span>
+                <span class="cta-meta-value">2 weeks</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER - BIG BRAND                                            -->
+<!-- ============================================================ -->
 <footer class="footer">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="assets/images/logo.png" alt="GeoClaw" class="footer-logo">
-                <p>Satellite Intelligence for Ground Safety</p>
-                <p class="footer-tagline">From Earth Observation to Real-World Decisions</p>
-            </div>
-            <div class="footer-links">
+        <div class="footer-top">
+            <div class="footer-col">
                 <h4>Services</h4>
                 <a href="#services">InSAR Monitoring</a>
                 <a href="#services">Rainfall Analysis</a>
                 <a href="#services">Vegetation Detection</a>
-                <a href="#services">ML Risk Classification</a>
+                <a href="#services">Machine Learning</a>
                 <a href="#services">Geo-Digital Twin</a>
             </div>
-            <div class="footer-links">
+            <div class="footer-col">
                 <h4>Company</h4>
-                <a href="#about">About GeoClaw</a>
-                <a href="#case-studies">Case Studies</a>
-                <a href="#technology">Technology</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#approach">Approach</a>
                 <a href="#contact">Contact</a>
             </div>
-            <div class="footer-links">
-                <h4>Data Sources</h4>
+            <div class="footer-col">
+                <h4>Data</h4>
                 <a href="#">Sentinel-1 (ESA)</a>
                 <a href="#">Sentinel-2 (ESA)</a>
-                <a href="#">ERA5-Land (ECMWF)</a>
+                <a href="#">NISAR (NASA/ISRO)</a>
+                <a href="#">ERA5 (ECMWF)</a>
                 <a href="#">CHIRPS (UCSB)</a>
-                <a href="#">Planet Labs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-x-twitter"></i> Twitter</a>
+                <a href="mailto:athifsayyaf@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
         </div>
+
+        <div class="footer-brand">
+            <h1>GeoClaw</h1>
+        </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 GeoClaw. All rights reserved.</p>
+            <span>© 2026 GeoClaw. All rights reserved.</span>
+            <span>Satellite Intelligence for Ground Safety</span>
+            <span><i class="fas fa-circle pulse-dot"></i> Monitoring active</span>
         </div>
     </div>
 </footer>

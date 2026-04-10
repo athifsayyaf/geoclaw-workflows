@@ -1,103 +1,104 @@
 /* ============================================================
-   GeoClaw — Main JavaScript
+   GeoClaw — Modern Brand Design JS
    ============================================================ */
 
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
+// ========== NAVBAR SCROLL ==========
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    const currentScroll = window.scrollY;
+    nav.classList.toggle('scrolled', currentScroll > 40);
+    lastScroll = currentScroll;
 });
 
-// Mobile menu toggle
+// ========== MOBILE MENU ==========
 const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+const navMenu = document.getElementById('navMenu');
 
-// Close mobile menu on link click
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        navToggle.classList.remove('active');
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
     });
-});
 
-// Smooth reveal on scroll
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-const observer = new IntersectionObserver((entries) => {
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+}
+
+// ========== REVEAL ON SCROLL ==========
+const observerOptions = {
+    threshold: 0.08,
+    rootMargin: '0px 0px -60px 0px'
+};
+
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.card, .timeline-item, .case-featured, .contact-form, .contact-info, .split-content').forEach(el => {
+// Apply reveal to major elements
+document.querySelectorAll('.tile, .service-row, .approach-card, .stat, .about-card, .section-header').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+    el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s`;
+    revealObserver.observe(el);
 });
 
-// Counter animation for stats
-function animateCounters() {
-    document.querySelectorAll('.stat-num, .case-num').forEach(el => {
-        const text = el.textContent;
-        if (text.match(/^\d/)) {
-            const target = parseInt(text);
-            let current = 0;
-            const increment = target / 40;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    el.textContent = text;
-                    clearInterval(timer);
-                } else {
-                    el.textContent = Math.floor(current) + text.replace(/[\d.]+/, '');
-                }
-            }, 30);
+// ========== TILE HOVER CURSOR EFFECT ==========
+const tiles = document.querySelectorAll('.tile');
+tiles.forEach(tile => {
+    tile.addEventListener('mousemove', (e) => {
+        const rect = tile.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotX = ((y - centerY) / centerY) * -2;
+        const rotY = ((x - centerX) / centerX) * 2;
+        tile.style.transform = `translateY(-6px) perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+
+    tile.addEventListener('mouseleave', () => {
+        tile.style.transform = '';
+    });
+});
+
+// ========== SMOOTH SCROLL FOR ANCHORS ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ========== FOOTER BRAND PARALLAX ==========
+const footerBrand = document.querySelector('.footer-brand h1');
+if (footerBrand) {
+    window.addEventListener('scroll', () => {
+        const rect = footerBrand.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const progress = 1 - (rect.top / window.innerHeight);
+            footerBrand.style.transform = `translateY(${progress * -30}px)`;
         }
     });
 }
 
-// Trigger counter animation when hero is visible
-const heroObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-        animateCounters();
-        heroObserver.disconnect();
-    }
-}, { threshold: 0.5 });
-heroObserver.observe(document.querySelector('.hero-stats'));
-
-// Form submission
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = 'Message Sent!';
-    btn.style.background = '#27ae60';
-    btn.style.borderColor = '#27ae60';
-    setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        btn.style.borderColor = '';
-        e.target.reset();
-    }, 3000);
-});
-
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY + 100;
-    sections.forEach(section => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-        if (link) {
-            link.classList.toggle('active', scrollY >= top && scrollY < top + height);
-        }
-    });
-});
+// ========== CONSOLE SIGNATURE ==========
+console.log('%cGeoClaw — Satellite Intelligence for Ground Safety', 'color:#1e5f3e;font-size:14px;font-weight:700;');
+console.log('%cCrafted with modern web design principles.', 'color:#6b6b6b;font-size:11px;');
