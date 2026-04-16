@@ -64,7 +64,7 @@ document.querySelectorAll('.offer-card, .approach-card').forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
         const y = ((e.clientY - rect.top) / rect.height) * 100;
-        card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 102, 204, 0.07), var(--bg-alt) 60%)`;
+        card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(45, 134, 89, 0.08), var(--bg-alt) 60%)`;
     });
     card.addEventListener('mouseleave', () => { card.style.background = ''; });
 });
@@ -234,5 +234,5 @@ if (carousel) {
 }
 
 // ========== CONSOLE SIGNATURE ==========
-console.log('%cGeoAgentix — Agentic AI for Satellite Ground Intelligence', 'color:#2563eb;font-size:14px;font-weight:700;');
+console.log('%cGeoAgentix — Agentic AI for Satellite Ground Intelligence', 'color:#1e5f3e;font-size:14px;font-weight:700;');
 console.log('%cBuilt with modern web design principles.', 'color:#5b6b80;font-size:11px;');

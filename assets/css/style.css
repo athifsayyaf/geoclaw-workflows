@@ -1,33 +1,33 @@
 /* ============================================================
    GeoAgentix — Modern Geospatial Brand Design System
-   Blue & Black palette · Minimal typography · Bold visuals.
+   Green & White palette · Minimal typography · Bold visuals.
    ============================================================ */
 
 :root {
-    --bg:            #f4f6fa;
+    --bg:            #f5f4f0;
     --bg-alt:        #ffffff;
-    --ink:           #0a0f1a;
-    --ink-soft:      #1c2433;
-    --ink-mute:      #5b6b80;
-    --ink-light:     #94a0b3;
-    --line:          #e2e8f0;
-    --line-dark:     #0a2647;
+    --ink:           #0a0a0a;
+    --ink-soft:      #2a2a2a;
+    --ink-mute:      #6b6b6b;
+    --ink-light:     #a0a0a0;
+    --line:          #e5e3dd;
+    --line-dark:     #1a1a1a;
 
-    /* Corporate navy palette */
-    --accent-navy:   #002e5d;
-    --accent-blue:   #00468c;
-    --accent-bright: #0066cc;
-    --accent-sky:    #1f7ed6;
-    --accent-light:  #6aa9e4;
-    --accent-cyan:   #1a8fb3;
-    --accent-gold:   #c9a25a;
+    /* Green & white palette */
+    --accent-navy:   #0a2818;   /* deep forest */
+    --accent-blue:   #1e5f3e;   /* primary green */
+    --accent-bright: #2d8659;   /* lighter green for action */
+    --accent-sky:    #4ea577;
+    --accent-light:  #c4f542;   /* lime accent */
+    --accent-cyan:   #2d8659;
+    --accent-gold:   #d4a456;
     --accent-orange: #e8673c;
     --accent-red:    #c0392b;
 
-    --shadow-sm: 0 2px 8px rgba(0, 46, 93, 0.06);
-    --shadow-md: 0 8px 24px rgba(0, 46, 93, 0.08);
-    --shadow-lg: 0 20px 50px rgba(0, 46, 93, 0.14);
-    --shadow-xl: 0 30px 80px rgba(0, 46, 93, 0.18);
+    --shadow-sm: 0 2px 8px rgba(10, 40, 24, 0.05);
+    --shadow-md: 0 8px 24px rgba(10, 40, 24, 0.08);
+    --shadow-lg: 0 20px 50px rgba(10, 40, 24, 0.12);
+    --shadow-xl: 0 30px 80px rgba(10, 40, 24, 0.15);
 
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -183,12 +183,12 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     border-radius: 100px;
     font-weight: 500;
     transition: transform 0.3s var(--ease-out), background 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 14px rgba(0, 46, 93, 0.20);
+    box-shadow: 0 4px 14px rgba(10, 40, 24, 0.20);
 }
 .nav-cta:hover {
     background: var(--accent-bright);
     transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 22px rgba(0, 102, 204, 0.40);
+    box-shadow: 0 8px 22px rgba(45, 134, 89, 0.40);
 }
 .nav-cta:active { transform: translateY(0) scale(0.98); }
 .nav-cta i { font-size: 11px; transition: transform 0.3s ease; }
@@ -220,7 +220,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     justify-content: center;
     overflow: hidden;
     background:
-      radial-gradient(circle at 80% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 30%, rgba(45, 134, 89, 0.08) 0%, transparent 50%),
       radial-gradient(circle at 20% 80%, rgba(10, 31, 68, 0.06) 0%, transparent 50%),
       var(--bg);
 }
@@ -323,9 +323,9 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     animation: pulse 2s ease infinite;
 }
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
-    70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(45, 134, 89, 0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(45, 134, 89, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(45, 134, 89, 0); }
 }
 .hero-location { display: inline-flex; align-items: center; gap: 6px; }
 .hero-location i { color: var(--accent-bright); }
@@ -377,7 +377,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 .hero-cta:hover {
     background: var(--accent-bright);
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 18px 44px rgba(0, 102, 204, 0.42);
+    box-shadow: 0 18px 44px rgba(45, 134, 89, 0.42);
 }
 .hero-cta:active { transform: translateY(-1px) scale(0.99); }
 .cta-arrow {
@@ -448,7 +448,7 @@ section { padding: 130px 0; }
     right: -100px;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(45, 134, 89,0.08) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -471,7 +471,7 @@ section { padding: 130px 0; }
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(45, 134, 89, 0.08) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -494,7 +494,7 @@ section { padding: 130px 0; }
 .offer-card:hover::before { opacity: 1; }
 .offer-card:hover .offer-icon {
     transform: rotate(-6deg) scale(1.08);
-    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.40);
+    box-shadow: 0 12px 28px rgba(45, 134, 89, 0.40);
 }
 .offer-card .offer-icon {
     width: 56px;
@@ -507,7 +507,7 @@ section { padding: 130px 0; }
     justify-content: center;
     font-size: 22px;
     margin-bottom: 22px;
-    box-shadow: 0 8px 20px rgba(0, 70, 140, 0.30);
+    box-shadow: 0 8px 20px rgba(30, 95, 62, 0.30);
     transition: transform 0.5s var(--ease-out), box-shadow 0.4s ease;
 }
 .offer-card h3 {
@@ -1364,10 +1364,47 @@ section { padding: 130px 0; }
     opacity: 0.85;
 }
 
-.about-card-1 { background: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-blue) 100%); color: #fff; }
+.about-card-1 { background: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-blue) 100%); color: var(--accent-light); }
 .about-card-2 { background: var(--ink); color: #fff; }
 .about-card-3 { background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-bright) 100%); color: #fff; }
-.about-card-4 { background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent-cyan) 100%); color: #fff; }
+.about-card-4 { background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent-sky) 100%); color: #fff; }
+
+/* ===== Merged Data Sources strip inside About ===== */
+.about-data {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+}
+.about-data-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+.about-data-header .eyebrow { margin-bottom: 0; }
+.about-data-header p {
+    font-size: 14px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.3px;
+}
+.data-grid.compact {
+    grid-template-columns: repeat(4, 1fr);
+}
+.data-grid.compact .data-item {
+    padding: 14px 18px;
+    gap: 12px;
+}
+.data-grid.compact .data-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+.data-grid.compact .data-info h4 { font-size: 13px; }
+.data-grid.compact .data-info p { font-size: 10px; }
 
 /* ============================================================ */
 /* CTA                                                           */
@@ -1423,13 +1460,13 @@ section { padding: 130px 0; }
     display: inline-block;
     padding: 10px 20px;
     border-radius: 100px;
-    background: rgba(96, 165, 250, 0.12);
+    background: rgba(196, 245, 66, 0.12);
     color: var(--accent-light);
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.5px;
     margin-bottom: 50px;
-    border: 1px solid rgba(96, 165, 250, 0.25);
+    border: 1px solid rgba(196, 245, 66, 0.25);
 }
 
 .cta-contact { margin-bottom: 80px; }
@@ -1450,7 +1487,7 @@ section { padding: 130px 0; }
     background: var(--accent-light);
     color: var(--ink);
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(96, 165, 250, 0.35);
+    box-shadow: 0 14px 40px rgba(196, 245, 66, 0.35);
 }
 .cta-email i {
     display: inline-flex;
@@ -1538,7 +1575,7 @@ section { padding: 130px 0; }
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.04em;
-    background: linear-gradient(180deg, var(--accent-light) 0%, rgba(96, 165, 250, 0.15) 100%);
+    background: linear-gradient(180deg, var(--accent-light) 0%, rgba(196, 245, 66, 0.15) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
