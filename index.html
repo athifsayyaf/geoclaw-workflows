@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoClaw — Satellite Intelligence for Ground Safety</title>
-    <meta name="description" content="GeoClaw builds satellite intelligence systems for landslide monitoring, InSAR deformation analysis, vegetation change detection, and real-time early warning powered by machine learning.">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>GeoAgentix — Agentic AI for Satellite Ground Intelligence</title>
+    <meta name="description" content="GeoAgentix is an agentic AI platform that turns SAR, optical, and hyperspectral satellite data into mm-precision ground-risk intelligence — autonomously, 10x faster than traditional workflows.">
+    <link rel="icon" type="image/png" href="assets/images/logo-geoagentix.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -18,12 +18,13 @@
 <nav class="nav" id="nav">
     <div class="nav-inner">
         <a href="#home" class="nav-brand">
-            <img src="assets/images/logo.png" alt="GeoClaw">
+            <img src="assets/images/logo-geoagentix.png" alt="GeoAgentix">
         </a>
         <div class="nav-menu" id="navMenu">
+            <a href="#offer">What We Offer</a>
+            <a href="#deck">Deck</a>
             <a href="#work">Work</a>
             <a href="#services">Services</a>
-            <a href="#approach">Approach</a>
             <a href="#about">About</a>
             <a href="#contact" class="nav-cta">Let's talk <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -37,90 +38,82 @@
 <!-- HERO                                                          -->
 <!-- ============================================================ -->
 <section class="hero" id="home">
-    <!-- Animated globe SVG -->
     <div class="hero-globe">
         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <radialGradient id="globeGrad" cx="35%" cy="35%">
-                    <stop offset="0%" stop-color="#2d8659" stop-opacity="0.9"/>
-                    <stop offset="70%" stop-color="#1e5f3e" stop-opacity="0.4"/>
-                    <stop offset="100%" stop-color="#0a2818" stop-opacity="0.1"/>
+                    <stop offset="0%" stop-color="#2563eb" stop-opacity="0.85"/>
+                    <stop offset="70%" stop-color="#1e3a8a" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="#0a1f44" stop-opacity="0.1"/>
                 </radialGradient>
             </defs>
-            <circle cx="200" cy="200" r="180" fill="url(#globeGrad)" stroke="#1e5f3e" stroke-width="1" opacity="0.6"/>
-            <!-- Longitude lines -->
-            <ellipse cx="200" cy="200" rx="180" ry="180" fill="none" stroke="#1e5f3e" stroke-width="0.6" opacity="0.4"/>
-            <ellipse cx="200" cy="200" rx="140" ry="180" fill="none" stroke="#1e5f3e" stroke-width="0.5" opacity="0.35"/>
-            <ellipse cx="200" cy="200" rx="90" ry="180" fill="none" stroke="#1e5f3e" stroke-width="0.5" opacity="0.35"/>
-            <ellipse cx="200" cy="200" rx="40" ry="180" fill="none" stroke="#1e5f3e" stroke-width="0.5" opacity="0.35"/>
-            <!-- Latitude lines -->
-            <ellipse cx="200" cy="200" rx="180" ry="40" fill="none" stroke="#1e5f3e" stroke-width="0.5" opacity="0.35"/>
-            <ellipse cx="200" cy="200" rx="180" ry="90" fill="none" stroke="#1e5f3e" stroke-width="0.5" opacity="0.35"/>
-            <ellipse cx="200" cy="200" rx="180" ry="140" fill="none" stroke="#1e5f3e" stroke-width="0.5" opacity="0.35"/>
-            <!-- Satellite orbit -->
-            <ellipse cx="200" cy="200" rx="220" ry="75" fill="none" stroke="#c4f542" stroke-width="1" stroke-dasharray="2 4" opacity="0.7" transform="rotate(-20 200 200)"/>
-            <!-- Satellite -->
+            <circle cx="200" cy="200" r="180" fill="url(#globeGrad)" stroke="#1e3a8a" stroke-width="1" opacity="0.65"/>
+            <ellipse cx="200" cy="200" rx="180" ry="180" fill="none" stroke="#1e3a8a" stroke-width="0.6" opacity="0.4"/>
+            <ellipse cx="200" cy="200" rx="140" ry="180" fill="none" stroke="#1e3a8a" stroke-width="0.5" opacity="0.35"/>
+            <ellipse cx="200" cy="200" rx="90" ry="180" fill="none" stroke="#1e3a8a" stroke-width="0.5" opacity="0.35"/>
+            <ellipse cx="200" cy="200" rx="40" ry="180" fill="none" stroke="#1e3a8a" stroke-width="0.5" opacity="0.35"/>
+            <ellipse cx="200" cy="200" rx="180" ry="40" fill="none" stroke="#1e3a8a" stroke-width="0.5" opacity="0.35"/>
+            <ellipse cx="200" cy="200" rx="180" ry="90" fill="none" stroke="#1e3a8a" stroke-width="0.5" opacity="0.35"/>
+            <ellipse cx="200" cy="200" rx="180" ry="140" fill="none" stroke="#1e3a8a" stroke-width="0.5" opacity="0.35"/>
+            <ellipse cx="200" cy="200" rx="220" ry="75" fill="none" stroke="#60a5fa" stroke-width="1" stroke-dasharray="2 4" opacity="0.75" transform="rotate(-20 200 200)"/>
             <g class="satellite">
-                <circle cx="420" cy="200" r="5" fill="#c4f542"/>
-                <line x1="410" y1="195" x2="430" y2="195" stroke="#c4f542" stroke-width="1.5"/>
-                <line x1="410" y1="205" x2="430" y2="205" stroke="#c4f542" stroke-width="1.5"/>
+                <circle cx="420" cy="200" r="5" fill="#60a5fa"/>
+                <line x1="410" y1="195" x2="430" y2="195" stroke="#60a5fa" stroke-width="1.5"/>
+                <line x1="410" y1="205" x2="430" y2="205" stroke="#60a5fa" stroke-width="1.5"/>
             </g>
-            <!-- Data points on globe -->
-            <circle cx="160" cy="150" r="3" fill="#c4f542" class="pulse-point"/>
-            <circle cx="220" cy="180" r="3" fill="#c4f542" class="pulse-point"/>
-            <circle cx="190" cy="240" r="3" fill="#c4f542" class="pulse-point"/>
-            <circle cx="250" cy="210" r="3" fill="#c4f542" class="pulse-point"/>
+            <circle cx="160" cy="150" r="3" fill="#60a5fa" class="pulse-point"/>
+            <circle cx="220" cy="180" r="3" fill="#60a5fa" class="pulse-point"/>
+            <circle cx="190" cy="240" r="3" fill="#60a5fa" class="pulse-point"/>
+            <circle cx="250" cy="210" r="3" fill="#60a5fa" class="pulse-point"/>
         </svg>
     </div>
 
     <div class="hero-marquee">
         <div class="marquee-track">
-            <span>◉ SENTINEL-1 C-BAND</span>
+            <span>◉ AGENTIC AI</span>
+            <span class="marquee-dot">●</span>
+            <span>◉ SENTINEL-1 SAR</span>
             <span class="marquee-dot">●</span>
             <span>◉ SENTINEL-2 OPTICAL</span>
             <span class="marquee-dot">●</span>
-            <span>◉ NISAR L-BAND SAR</span>
+            <span>◉ HYPERSPECTRAL</span>
+            <span class="marquee-dot">●</span>
+            <span>◉ NISAR L-BAND</span>
             <span class="marquee-dot">●</span>
             <span>◉ ERA5 REANALYSIS</span>
-            <span class="marquee-dot">●</span>
-            <span>◉ CHIRPS RAINFALL</span>
             <span class="marquee-dot">●</span>
             <span>◉ PS / SBAS INSAR</span>
             <span class="marquee-dot">●</span>
-            <span>◉ NDVI / EVI / NDMI</span>
-            <span class="marquee-dot">●</span>
             <span>◉ MACHINE LEARNING</span>
             <span class="marquee-dot">●</span>
-            <span>◉ SENTINEL-1 C-BAND</span>
+            <span>◉ AGENTIC AI</span>
             <span class="marquee-dot">●</span>
-            <span>◉ SENTINEL-2 OPTICAL</span>
+            <span>◉ SENTINEL-1 SAR</span>
             <span class="marquee-dot">●</span>
-            <span>◉ NISAR L-BAND SAR</span>
+            <span>◉ HYPERSPECTRAL</span>
             <span class="marquee-dot">●</span>
-            <span>◉ ERA5 REANALYSIS</span>
-            <span class="marquee-dot">●</span>
+            <span>◉ ±1MM PRECISION</span>
         </div>
     </div>
 
     <div class="container hero-content">
         <div class="hero-meta">
-            <span class="hero-badge"><span class="pulse"></span> Now processing NISAR L-band data</span>
+            <span class="hero-badge"><span class="pulse"></span> Agentic AI · Now monitoring 100+ sites</span>
             <span class="hero-location">
                 <i class="fas fa-location-dot"></i> Global coverage · Est. 2024
             </span>
         </div>
 
         <h1 class="hero-title">
-            Ground truth<br>
-            <em class="serif">from</em> orbit.<br>
-            Delivered <em class="serif">daily.</em>
+            Ground intelligence<br>
+            <em class="serif">at</em> millimeter<br>
+            <em class="serif">precision.</em>
         </h1>
 
         <div class="hero-bottom">
             <p class="hero-desc">
-                GeoClaw turns petabytes of satellite data into actionable ground-risk intelligence.
-                We monitor slopes, infrastructure and ecosystems from space —
-                <strong>detecting movement in millimetres, forecasting failures in days.</strong>
+                GeoAgentix is an agentic AI platform that turns SAR, optical and hyperspectral satellite data into ground-risk intelligence —
+                <strong>autonomously, 10× faster than traditional workflows.</strong>
             </p>
             <a href="#contact" class="hero-cta">
                 <span class="cta-label">Start a project</span>
@@ -141,16 +134,404 @@
                 <div class="stat-label">InSAR displacement<br>precision</div>
             </div>
             <div class="stat">
-                <div class="stat-num">8</div>
-                <div class="stat-label">Days of advance<br>landslide warning</div>
+                <div class="stat-num">10×</div>
+                <div class="stat-label">Faster than traditional<br>GIS workflows</div>
             </div>
             <div class="stat">
-                <div class="stat-num">10m</div>
-                <div class="stat-label">Sentinel-2 spatial<br>resolution</div>
+                <div class="stat-num">100+</div>
+                <div class="stat-label">Sites under active<br>monitoring</div>
             </div>
             <div class="stat">
                 <div class="stat-num">24/7</div>
-                <div class="stat-label">Automated risk<br>monitoring</div>
+                <div class="stat-label">Autonomous AI<br>monitoring</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- HOW CAN WE HELP YOU? / WHAT WE OFFER                         -->
+<!-- ============================================================ -->
+<section class="offer" id="offer">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">How Can We Help You?</span>
+            <h2 class="section-title">
+                White-label satellite intelligence —<br>
+                <em class="serif">resell under your brand</em> with zero R&amp;D.
+            </h2>
+        </div>
+
+        <div class="offer-grid">
+            <div class="offer-card">
+                <div class="offer-icon"><i class="fas fa-satellite-dish"></i></div>
+                <h3>TerraSense</h3>
+                <p>Continuous urban &amp; infrastructure subsidence monitoring at millimeter precision. Automated alerts and dashboards for asset owners.</p>
+                <ul>
+                    <li>PS / SBAS validated to sub-mm</li>
+                    <li>Continuous monitoring</li>
+                    <li>White-label dashboards</li>
+                </ul>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon"><i class="fas fa-mountain"></i></div>
+                <h3>SlopeGuard</h3>
+                <p>Landslide detection and velocity mapping using SBAS time-series. Ideal for slopes, embankments and infrastructure corridors.</p>
+                <ul>
+                    <li>SBAS / PS time-series</li>
+                    <li>Risk-zone mapping</li>
+                    <li>96% noise-removal rate</li>
+                </ul>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>ChangeScope</h3>
+                <p>Optical satellite change detection for vegetation, land-use and encroachment monitoring. Multi-temporal analysis at scale.</p>
+                <ul>
+                    <li>Sentinel-2 multi-temporal</li>
+                    <li>SAR + optical fusion (91%+)</li>
+                    <li>Compliance reporting</li>
+                </ul>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon"><i class="fas fa-water"></i></div>
+                <h3>IntelliFlow</h3>
+                <p>ML-driven debris-flow runout prediction. Hazard scoring and forecasted scenarios validated against RAMMS numerical models.</p>
+                <ul>
+                    <li>ML / DL hazard models</li>
+                    <li>Predictive runout maps</li>
+                    <li>Field-validated</li>
+                </ul>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon"><i class="fas fa-map-location-dot"></i></div>
+                <h3>EcoMap</h3>
+                <p>Multi-layer GIS mapping fusing geospatial, geological and environmental data for site characterization and impact assessment.</p>
+                <ul>
+                    <li>Multi-layer GIS</li>
+                    <li>Geo-environmental fusion</li>
+                    <li>Sensor-agnostic</li>
+                </ul>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Partner Program</h3>
+                <p>Reseller and channel-partner ready. Co-branded or fully white-labelled. You sell, we process, both grow.</p>
+                <ul>
+                    <li>Partner rates from 35% off retail</li>
+                    <li>Full white-label deliverables</li>
+                    <li>One API, unlimited scale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="offer-cta-wrap">
+            <h3>Connect with our CTO or technical team for tailored solutions.</h3>
+            <p>Every region has its own ground-risk story. Let us shape the right one for yours.</p>
+            <a href="mailto:athif.sayyaf@geoagentix.com">Talk to our team <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DECK / CAROUSEL                                               -->
+<!-- ============================================================ -->
+<section class="deck" id="deck">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Our Pitch Deck</span>
+            <h2 class="section-title">
+                The full <em class="serif">GeoAgentix</em> story —<br>
+                in thirteen slides.
+            </h2>
+        </div>
+
+        <div class="carousel" id="carousel">
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+
+                    <!-- Slide 1 - Cover -->
+                    <div class="slide dark">
+                        <div class="slide-num">01 / COVER</div>
+                        <h3 class="slide-title">Ground Intelligence at <em class="serif">Millimeter Precision.</em></h3>
+                        <p class="slide-body">Reseller &amp; Channel Partner Deck — <strong>Agentic AI for Satellite Ground Intelligence.</strong></p>
+                        <div class="slide-stats">
+                            <div class="slide-stat"><div class="ss-num">±1mm</div><div class="ss-label">InSAR Precision</div></div>
+                            <div class="slide-stat"><div class="ss-num">10×</div><div class="ss-label">Faster Processing</div></div>
+                            <div class="slide-stat"><div class="ss-num">100+</div><div class="ss-label">Sites Monitored</div></div>
+                            <div class="slide-stat"><div class="ss-num">24/7</div><div class="ss-label">AI Monitoring</div></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 - Company Overview -->
+                    <div class="slide">
+                        <div class="slide-num">02 / COMPANY OVERVIEW</div>
+                        <h3 class="slide-title">An <em class="serif">agentic AI platform</em> for ground-risk intelligence.</h3>
+                        <p class="slide-body">GeoAgentix turns SAR, optical and hyperspectral satellite data into actionable intelligence — <strong>autonomously, 10× faster than traditional workflows.</strong></p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">DETECT</div>
+                                <h4>mm-precision deformation</h4>
+                                <p>From Sentinel-1 SAR, surface change from Sentinel-2 optical, and material signatures from hyperspectral imagery — one platform, any sensor.</p>
+                                <span class="scard-meta">PS-InSAR / SBAS sub-mm accuracy</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">PREDICT</div>
+                                <h4>Agentic AI pipeline</h4>
+                                <p>Autonomously ingests multi-sensor data, runs ML hazard scoring and forecasts displacement trajectories — no manual GIS intervention.</p>
+                                <span class="scard-meta">RF optimal for landslide susceptibility</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">MONITOR</div>
+                                <h4>White-label dashboards</h4>
+                                <p>Automated alert reports delivered to your clients under your brand. Continuous monitoring across infrastructure, mining and natural-hazard sites.</p>
+                                <span class="scard-meta">Wide-area, low-cost, continuous</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 - Product Suite -->
+                    <div class="slide">
+                        <div class="slide-num">03 / PRODUCT SUITE</div>
+                        <h3 class="slide-title">A modular product suite — <em class="serif">white-label ready.</em></h3>
+                        <p class="slide-body">Sensor-agnostic, validated by peer-reviewed research, ready to ship under your brand from day one.</p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">01</div>
+                                <h4>TerraSense</h4>
+                                <p>Continuous urban &amp; infrastructure subsidence monitoring at mm precision. Sub-mm validated (Sci Reports 2023).</p>
+                                <span class="scard-meta">Millimetric · Continuous</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">02</div>
+                                <h4>SlopeGuard</h4>
+                                <p>SBAS-InSAR landslide detection. Identified 59 landslides (34 previously unknown) in Xiaojiang Basin.</p>
+                                <span class="scard-meta">SBAS · 96% noise removal</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">03</div>
+                                <h4>ChangeScope</h4>
+                                <p>Optical change detection. SAR + optical fusion reaches 91.1% accuracy (Taylor &amp; Francis, 2023).</p>
+                                <span class="scard-meta">Multi-temporal · Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 - Methodology -->
+                    <div class="slide dark">
+                        <div class="slide-num">04 / TECHNICAL METHODOLOGY</div>
+                        <h3 class="slide-title">From orbit to dashboard in <em class="serif">five steps.</em></h3>
+                        <p class="slide-body">Reproducible Python pipelines, ESA Sentinel data, validated against ground-truth — <strong>RMSE 2.17mm vs. leveling.</strong></p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">01 · ACQUIRE</div>
+                                <h4>SAR Data Acquisition</h4>
+                                <p>Sentinel-1 C-band SAR, 6-12 day revisit. Free from ESA, global coverage.</p>
+                                <span class="scard-meta">5.405 GHz / 5.55cm wavelength</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">02 · PROCESS</div>
+                                <h4>SBAS-InSAR</h4>
+                                <p>Multi-temporal interferometric processing using small baseline subsets for mm-level precision.</p>
+                                <span class="scard-meta">Frontiers in Earth Science 2024</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">03 · INTERPRET</div>
+                                <h4>ML Prediction Layer</h4>
+                                <p>Ensemble ML models for hazard susceptibility scoring and displacement prediction.</p>
+                                <span class="scard-meta">Random Forest · Deep Learning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 - Joshimath -->
+                    <div class="slide">
+                        <div class="slide-num">05 / CASE STUDY · JOSHIMATH</div>
+                        <h3 class="slide-title">Joshimath, Uttarakhand — <em class="serif">urban subsidence.</em></h3>
+                        <p class="slide-body">Town built on ancient landslide deposit. <strong>4,500+ families displaced in the 2023 crisis.</strong> No early-warning system existed prior to GeoAgentix analysis.</p>
+                        <div class="slide-stats">
+                            <div class="slide-stat"><div class="ss-num">~150</div><div class="ss-label">SAR Scenes (S1)</div></div>
+                            <div class="slide-stat"><div class="ss-num">5 yrs</div><div class="ss-label">2020 → 2025</div></div>
+                            <div class="slide-stat"><div class="ss-num">>30 mm/yr</div><div class="ss-label">Subsidence Rate</div></div>
+                            <div class="slide-stat"><div class="ss-num">3</div><div class="ss-label">New Risk Zones</div></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 - Joshimath validation -->
+                    <div class="slide">
+                        <div class="slide-num">06 / GROUND VALIDATION</div>
+                        <h3 class="slide-title">Validated against <em class="serif">field ground-truth</em> surveys.</h3>
+                        <p class="slide-body">InSAR deformation maps correlated with GSI ground-truth surveys — confirmed subsidence patterns <strong>prior to visible structural failure.</strong> Structural cracks, wall collapse and road deformation all detected by InSAR before becoming visible damage.</p>
+                    </div>
+
+                    <!-- Slide 7 - Jhaliya -->
+                    <div class="slide">
+                        <div class="slide-num">07 / CASE STUDY · JHALIYA</div>
+                        <h3 class="slide-title">Jhaliya — a slow-moving landslide on a <em class="serif">strategic corridor.</em></h3>
+                        <p class="slide-body">Chamoli District, elevation 2,800–3,400m. Strategic military and pilgrimage road corridor with <strong>no prior deformation record</strong> before GeoAgentix intervention.</p>
+                        <div class="slide-stats">
+                            <div class="slide-stat"><div class="ss-num">~150</div><div class="ss-label">SAR Scenes</div></div>
+                            <div class="slide-stat"><div class="ss-num">2020-25</div><div class="ss-label">Observation</div></div>
+                            <div class="slide-stat"><div class="ss-num">>30mm/yr</div><div class="ss-label">Max Velocity</div></div>
+                            <div class="slide-stat"><div class="ss-num">SBAS</div><div class="ss-label">Methodology</div></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 - Kuwari -->
+                    <div class="slide dark">
+                        <div class="slide-num">08 / CASE STUDY · KUWARI</div>
+                        <h3 class="slide-title">Kuwari — <em class="serif">LLOF risk</em> on a Himalayan corridor.</h3>
+                        <p class="slide-body">Persistent accelerating ground subsidence detected over a 5-year observation period. <strong>20cm maximum cumulative displacement.</strong> Time-series analysis confirms serious LLOF (Landslide Lake Outburst Flood) risk from damming, breaching or overtopping.</p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">FINDING</div>
+                                <h4>Accelerating subsidence</h4>
+                                <p>Persistent ground motion confirmed across the 5-year window — strongest signal of any Himalayan corridor we've measured.</p>
+                                <span class="scard-meta">Under revision · Landslides journal</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">RISK</div>
+                                <h4>LLOF threat zone</h4>
+                                <p>Damming, breaching or overtopping risk identified — methodology applicable to any region with dam-safety regulations.</p>
+                                <span class="scard-meta">mm-level dam deformation</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">PARTNER</div>
+                                <h4>Dam operators</h4>
+                                <p>Worldwide need for upstream slope monitoring. White-label opportunity for regional engineering consultancies.</p>
+                                <span class="scard-meta">Global applicability</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 9 - IntelliFlow -->
+                    <div class="slide">
+                        <div class="slide-num">09 / INTELLIFLOW</div>
+                        <h3 class="slide-title">ML <em class="serif">debris-flow runout</em> prediction.</h3>
+                        <p class="slide-body">We analyse and predict the future of landscapes using AI-driven geospatial intelligence. Machine-learning models translate optical data into <strong>actionable debris-flow hazard forecasts</strong> — validated against RAMMS numerical simulation at the Koyna landslide, Maharashtra, India.</p>
+                    </div>
+
+                    <!-- Slide 10 - Why Partner -->
+                    <div class="slide">
+                        <div class="slide-num">10 / WHY PARTNER WITH US</div>
+                        <h3 class="slide-title">Your brand, our engine — <em class="serif">zero R&amp;D investment.</em></h3>
+                        <p class="slide-body">White-label satellite intelligence powered by agentic AI. Resell under your brand from day one.</p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">AGENTIC AI</div>
+                                <h4>Autonomous</h4>
+                                <p>End-to-end satellite data ingestion, processing and report generation — no manual GIS intervention required.</p>
+                                <span class="scard-meta">100% autonomous pipeline</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">MULTI-SENSOR</div>
+                                <h4>SAR + Optical + Hyperspectral</h4>
+                                <p>One platform processes Sentinel-1 SAR, Sentinel-2 optical and hyperspectral imagery. Serve any use case from a single backend.</p>
+                                <span class="scard-meta">Sensor-agnostic</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">10× FASTER</div>
+                                <h4>Days, not months</h4>
+                                <p>Traditional satellite analysis takes weeks. Our agentic pipeline delivers actionable intelligence in days — your competitive edge.</p>
+                                <span class="scard-meta">Competitive delivery edge</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 11 - How It Works -->
+                    <div class="slide dark">
+                        <div class="slide-num">11 / HOW IT WORKS</div>
+                        <h3 class="slide-title">You sell. We process. <em class="serif">We both grow.</em></h3>
+                        <p class="slide-body">Partner rates start at <strong>35% below retail.</strong> You control the markup. One API, unlimited scale.</p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">01 · YOU SELL</div>
+                                <h4>Full client ownership</h4>
+                                <p>You own the client relationship end-to-end. Your brand, your pricing, your contracts. GeoAgentix never appears.</p>
+                                <span class="scard-meta">Set your own margins</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">02 · WE PROCESS</div>
+                                <h4>Agentic AI pipeline</h4>
+                                <p>Our engine ingests satellite data, runs InSAR, generates deformation maps and produces white-label dashboards — autonomously, in days.</p>
+                                <span class="scard-meta">White-label deliverables</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">03 · WE GROW</div>
+                                <h4>Zero hiring needed</h4>
+                                <p>You add satellite intelligence to your portfolio overnight — no R&amp;D, no infrastructure. We gain market reach via your network.</p>
+                                <span class="scard-meta">Scale with demand</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 12 - Team -->
+                    <div class="slide">
+                        <div class="slide-num">12 / TEAM</div>
+                        <h3 class="slide-title">Built by <em class="serif">scientists.</em> Backed by partnerships.</h3>
+                        <p class="slide-body">A team that has published, deployed and validated InSAR, ML and geotechnical workflows across the Himalaya, Alps and beyond.</p>
+                        <div class="slide-grid">
+                            <div class="slide-card">
+                                <div class="scard-num">FOUNDER &amp; CEO</div>
+                                <h4>Ahammad Shibil</h4>
+                                <p>Former venture capitalist in deep tech, specialising in scaling startups, strategy and investments.</p>
+                                <span class="scard-meta">Strategy · Investments</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">CO-FOUNDER · CSO</div>
+                                <h4>Dr. Achu A.L.</h4>
+                                <p>Lead Scientist. InSAR &amp; remote sensing specialist with 10+ years in geospatial intelligence.</p>
+                                <span class="scard-meta">InSAR · Remote sensing</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">CO-FOUNDER · CTO</div>
+                                <h4>Athif Sayyaf</h4>
+                                <p>CTO &amp; partnerships lead. Manages channel strategy and ecosystem partner relationships.</p>
+                                <span class="scard-meta">Engineering · Partnerships</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">ADVISOR</div>
+                                <h4>Dr. Yunus Ali</h4>
+                                <p>Scientific advisor. Leading researcher in landslide dynamics and geohazard risk assessment.</p>
+                                <span class="scard-meta">Geohazard risk</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">TEAM</div>
+                                <h4>Adil Sajjad</h4>
+                                <p>Engineering &amp; partnerships. Manages technical execution across reseller workflows.</p>
+                                <span class="scard-meta">Engineering</span>
+                            </div>
+                            <div class="slide-card">
+                                <div class="scard-num">TEAM</div>
+                                <h4>Shafeeque</h4>
+                                <p>Technical expert in geology and geotechnical engineering, specialising in slope stability.</p>
+                                <span class="scard-meta">Geotechnics · Slopes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 13 - Let's Build Together -->
+                    <div class="slide dark">
+                        <div class="slide-num">13 / LET'S BUILD TOGETHER</div>
+                        <h3 class="slide-title">Agentic AI for <em class="serif">satellite ground intelligence.</em></h3>
+                        <p class="slide-body">Agentic-powered satellite data processing using SAR and optical imagery for infrastructure, mining and natural-hazard markets.</p>
+                        <p class="slide-body"><strong>Connect with our CTO or technical team for tailored solutions.</strong> Reach us at <a href="mailto:athif.sayyaf@geoagentix.com" style="color:var(--accent-light); text-decoration:underline;">athif.sayyaf@geoagentix.com</a>.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <div class="carousel-dots" id="carouselDots"></div>
+                <div class="carousel-arrows">
+                    <span class="carousel-counter" id="carouselCounter">01 / 13</span>
+                    <button class="carousel-arrow" id="carouselPrev" aria-label="Previous slide">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="carousel-arrow" id="carouselNext" aria-label="Next slide">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -170,7 +551,6 @@
         </div>
 
         <div class="work-grid">
-            <!-- Tile 1 - Morro do Cristo Landslide -->
             <a href="#contact" class="tile tile-lg tile-image">
                 <img src="assets/images/casestudy-morro.jpg" alt="Morro do Cristo landslide" class="tile-bg">
                 <div class="tile-overlay"></div>
@@ -190,8 +570,7 @@
                 </div>
             </a>
 
-            <!-- Tile 2 - InSAR Displacement -->
-            <a href="#contact" class="tile tile-md tile-green">
+            <a href="#contact" class="tile tile-md tile-navy">
                 <div class="tile-content">
                     <div class="tile-label">
                         <span>02 / INSAR</span>
@@ -205,20 +584,11 @@
                 <div class="tile-sparkline">
                     <svg viewBox="0 0 200 50" preserveAspectRatio="none">
                         <polyline points="0,30 20,28 40,25 60,22 80,20 100,18 120,16 140,15 160,12 180,10 200,8"
-                                  fill="none" stroke="#c4f542" stroke-width="2" opacity="0.9"/>
-                        <polyline points="0,30 20,28 40,25 60,22 80,20 100,18 120,16 140,15 160,12 180,10 200,8"
-                                  fill="url(#sparkGrad)" stroke="none" opacity="0.2"/>
-                        <defs>
-                            <linearGradient id="sparkGrad" x1="0" x2="0" y1="0" y2="1">
-                                <stop offset="0%" stop-color="#c4f542"/>
-                                <stop offset="100%" stop-color="#c4f542" stop-opacity="0"/>
-                            </linearGradient>
-                        </defs>
+                                  fill="none" stroke="#60a5fa" stroke-width="2" opacity="0.95"/>
                     </svg>
                 </div>
             </a>
 
-            <!-- Tile 3 - NISAR L-band -->
             <a href="#contact" class="tile tile-md tile-image-small">
                 <img src="assets/images/nisar/comparison_grid.png" alt="NISAR L-band comparison" class="tile-bg">
                 <div class="tile-overlay"></div>
@@ -234,7 +604,6 @@
                 </div>
             </a>
 
-            <!-- Tile 4 - Rainfall Threshold -->
             <a href="#contact" class="tile tile-md tile-blue">
                 <div class="tile-content">
                     <div class="tile-label">
@@ -265,7 +634,6 @@
                 </div>
             </a>
 
-            <!-- Tile 5 - Vegetation Change -->
             <a href="#contact" class="tile tile-md tile-image-small">
                 <img src="assets/images/work-vegetation.png" alt="NDVI change detection" class="tile-bg contained">
                 <div class="tile-overlay-light"></div>
@@ -276,12 +644,11 @@
                     </div>
                     <div class="tile-center">
                         <div class="tile-stat dark">10<span class="small">yr</span></div>
-                        <div class="tile-stat-label dark">NDVI archive<br>& change detection</div>
+                        <div class="tile-stat-label dark">NDVI archive<br>&amp; change detection</div>
                     </div>
                 </div>
             </a>
 
-            <!-- Tile 6 - ML Risk -->
             <a href="#contact" class="tile tile-md tile-purple">
                 <div class="tile-content">
                     <div class="tile-label">
@@ -293,7 +660,6 @@
                         <p class="tile-text-sm">Anomaly detection<br>+ K-Means clustering</p>
                     </div>
                 </div>
-                <!-- ML scatter dots -->
                 <div class="tile-scatter">
                     <div class="dot green" style="top:70%; left:10%;"></div>
                     <div class="dot green" style="top:75%; left:18%;"></div>
@@ -306,7 +672,6 @@
                 </div>
             </a>
 
-            <!-- Tile 7 - Geo Digital Twin wide -->
             <a href="#contact" class="tile tile-wide tile-light">
                 <div class="tile-content">
                     <div class="tile-label label-dark">
@@ -647,22 +1012,24 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-text">
-                <span class="eyebrow">About GeoClaw</span>
+                <span class="eyebrow">About GeoAgentix</span>
                 <h2 class="section-title">
                     We think like <em class="serif">engineers.</em><br>
                     We act like <em class="serif">scientists.</em><br>
                     We deliver like a startup.
                 </h2>
                 <p class="about-para">
-                    GeoClaw is a geospatial intelligence consultancy specialising in satellite-based ground monitoring. We combine InSAR technology, optical imagery, hydrometeorological data and machine learning to deliver actionable risk intelligence for infrastructure, slopes and communities.
+                    GeoAgentix is an agentic AI platform for satellite-based ground monitoring. We combine InSAR technology, optical and hyperspectral imagery, hydrometeorological data and machine learning to deliver actionable risk intelligence for infrastructure, slopes and communities.
                 </p>
                 <p class="about-para">
-                    Our team has backgrounds in InSAR processing, geotechnical engineering, remote sensing and machine learning. We publish our methods. We open-source our code. We explain our findings in plain language — because decisions depend on trust, not jargon.
+                    Our team has deep backgrounds in InSAR processing, geotechnical engineering, remote sensing and machine learning. We publish our methods. We open-source our code. We explain our findings in plain language — because decisions depend on trust, not jargon.
                 </p>
                 <div class="about-tags">
+                    <span>Agentic AI</span>
                     <span>InSAR</span>
                     <span>NISAR L-band</span>
                     <span>Sentinel-1 &amp; 2</span>
+                    <span>Hyperspectral</span>
                     <span>ERA5</span>
                     <span>CHIRPS</span>
                     <span>Python</span>
@@ -677,16 +1044,16 @@
                     <div class="about-card-label">Precision</div>
                 </div>
                 <div class="about-card about-card-2">
-                    <div class="about-card-num">8d</div>
-                    <div class="about-card-label">Advance warning</div>
+                    <div class="about-card-num">10×</div>
+                    <div class="about-card-label">Faster delivery</div>
                 </div>
                 <div class="about-card about-card-3">
-                    <div class="about-card-num">10+</div>
-                    <div class="about-card-label">Data sources</div>
+                    <div class="about-card-num">100+</div>
+                    <div class="about-card-label">Sites monitored</div>
                 </div>
                 <div class="about-card about-card-4">
                     <div class="about-card-num">24/7</div>
-                    <div class="about-card-label">Monitoring</div>
+                    <div class="about-card-label">Autonomous AI</div>
                 </div>
             </div>
         </div>
@@ -699,11 +1066,11 @@
 <section class="cta" id="contact">
     <div class="cta-globe">
         <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="150" cy="150" r="130" fill="none" stroke="#c4f542" stroke-width="0.5" opacity="0.4"/>
-            <ellipse cx="150" cy="150" rx="130" ry="50" fill="none" stroke="#c4f542" stroke-width="0.5" opacity="0.3"/>
-            <ellipse cx="150" cy="150" rx="50" ry="130" fill="none" stroke="#c4f542" stroke-width="0.5" opacity="0.3"/>
-            <ellipse cx="150" cy="150" rx="100" ry="130" fill="none" stroke="#c4f542" stroke-width="0.5" opacity="0.25"/>
-            <ellipse cx="150" cy="150" rx="130" ry="100" fill="none" stroke="#c4f542" stroke-width="0.5" opacity="0.25"/>
+            <circle cx="150" cy="150" r="130" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.4"/>
+            <ellipse cx="150" cy="150" rx="130" ry="50" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+            <ellipse cx="150" cy="150" rx="50" ry="130" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+            <ellipse cx="150" cy="150" rx="100" ry="130" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.25"/>
+            <ellipse cx="150" cy="150" rx="130" ry="100" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.25"/>
         </svg>
     </div>
     <div class="container">
@@ -713,13 +1080,16 @@
             <em class="serif">that matters.</em>
         </h2>
         <p class="cta-desc">
-            Every month without monitoring is a month we're gambling with safety.<br>
+            Every month without monitoring is a month spent gambling with safety.<br>
             Tell us about your project — we'll deliver an initial assessment within two weeks.
         </p>
+        <div class="cta-note">
+            <i class="fas fa-circle-info"></i> &nbsp; Connect with our CTO or technical team for tailored solutions.
+        </div>
 
         <div class="cta-contact">
-            <a href="mailto:athifsayyaf@gmail.com" class="cta-email">
-                <span>athifsayyaf@gmail.com</span>
+            <a href="mailto:athif.sayyaf@geoagentix.com" class="cta-email">
+                <span>athif.sayyaf@geoagentix.com</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
         </div>
@@ -742,25 +1112,25 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- FOOTER - BIG BRAND                                            -->
+<!-- FOOTER                                                        -->
 <!-- ============================================================ -->
 <footer class="footer">
     <div class="container">
         <div class="footer-top">
             <div class="footer-col">
-                <h4>Services</h4>
-                <a href="#services">InSAR Monitoring</a>
-                <a href="#services">Rainfall Analysis</a>
-                <a href="#services">Vegetation Detection</a>
-                <a href="#services">Machine Learning</a>
-                <a href="#services">Geo-Digital Twin</a>
-                <a href="#services">Geotechnical Support</a>
+                <h4>What We Offer</h4>
+                <a href="#offer">TerraSense</a>
+                <a href="#offer">SlopeGuard</a>
+                <a href="#offer">ChangeScope</a>
+                <a href="#offer">IntelliFlow</a>
+                <a href="#offer">EcoMap</a>
+                <a href="#offer">Partner Program</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <a href="#about">About</a>
+                <a href="#deck">Pitch Deck</a>
                 <a href="#work">Work</a>
-                <a href="#approach">Approach</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-col">
@@ -776,17 +1146,17 @@
                 <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                 <a href="#"><i class="fab fa-github"></i> GitHub</a>
                 <a href="#"><i class="fab fa-x-twitter"></i> Twitter</a>
-                <a href="mailto:athifsayyaf@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="mailto:athif.sayyaf@geoagentix.com"><i class="fas fa-envelope"></i> athif.sayyaf@geoagentix.com</a>
             </div>
         </div>
 
         <div class="footer-brand">
-            <h1>GeoClaw</h1>
+            <h1>GeoAgentix</h1>
         </div>
 
         <div class="footer-bottom">
-            <span>© 2026 GeoClaw. All rights reserved.</span>
-            <span>Satellite Intelligence for Ground Safety</span>
+            <span>© 2026 GeoAgentix. All rights reserved.</span>
+            <span>Agentic AI for Satellite Ground Intelligence</span>
             <span><i class="fas fa-circle pulse-dot"></i> Monitoring active</span>
         </div>
     </div>

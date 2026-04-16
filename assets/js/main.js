@@ -1,15 +1,12 @@
 /* ============================================================
-   GeoClaw — Modern Brand Design JS
+   GeoAgentix — Modern Brand Design JS
    ============================================================ */
 
 // ========== NAVBAR SCROLL ==========
 const nav = document.getElementById('nav');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    nav.classList.toggle('scrolled', currentScroll > 40);
-    lastScroll = currentScroll;
+    nav.classList.toggle('scrolled', window.scrollY > 40);
 });
 
 // ========== MOBILE MENU ==========
@@ -31,11 +28,6 @@ if (navToggle) {
 }
 
 // ========== REVEAL ON SCROLL ==========
-const observerOptions = {
-    threshold: 0.08,
-    rootMargin: '0px 0px -60px 0px'
-};
-
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -44,33 +36,26 @@ const revealObserver = new IntersectionObserver((entries) => {
             entry.target.style.transform = 'translateY(0)';
         }
     });
-}, observerOptions);
+}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
-// Apply reveal to major elements
-document.querySelectorAll('.tile, .service-row, .approach-card, .stat, .about-card, .section-header').forEach((el, i) => {
+document.querySelectorAll('.tile, .service-row, .approach-card, .stat, .about-card, .section-header, .offer-card, .data-item').forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = `opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s`;
     revealObserver.observe(el);
 });
 
-// ========== TILE HOVER CURSOR EFFECT ==========
-const tiles = document.querySelectorAll('.tile');
-tiles.forEach(tile => {
+// ========== TILE TILT EFFECT ==========
+document.querySelectorAll('.tile').forEach(tile => {
     tile.addEventListener('mousemove', (e) => {
         const rect = tile.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotX = ((y - centerY) / centerY) * -2;
-        const rotY = ((x - centerX) / centerX) * 2;
+        const rotX = ((e.clientY - rect.top - centerY) / centerY) * -2;
+        const rotY = ((e.clientX - rect.left - centerX) / centerX) * 2;
         tile.style.transform = `translateY(-6px) perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
     });
-
-    tile.addEventListener('mouseleave', () => {
-        tile.style.transform = '';
-    });
+    tile.addEventListener('mouseleave', () => { tile.style.transform = ''; });
 });
 
 // ========== SMOOTH SCROLL FOR ANCHORS ==========
@@ -79,10 +64,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             e.preventDefault();
-            window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
         }
     });
 });
@@ -99,6 +81,94 @@ if (footerBrand) {
     });
 }
 
+// ========== DECK CAROUSEL ==========
+const carousel = document.getElementById('carousel');
+if (carousel) {
+    const track = document.getElementById('carouselTrack');
+    const slides = track.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const dotsWrap = document.getElementById('carouselDots');
+    const counter = document.getElementById('carouselCounter');
+    const total = slides.length;
+    let current = 0;
+    let autoplayTimer = null;
+    const AUTOPLAY_MS = 7000;
+
+    // Build dots
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+    }
+    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function update() {
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        counter.textContent = `${pad(current + 1)} / ${pad(total)}`;
+    }
+
+    function goTo(i) {
+        current = (i + total) % total;
+        update();
+        resetAutoplay();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    // Keyboard navigation when carousel in view
+    document.addEventListener('keydown', (e) => {
+        const rect = carousel.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight * 0.6 && rect.bottom > window.innerHeight * 0.4;
+        if (!inView) return;
+        if (e.key === 'ArrowRight') next();
+        else if (e.key === 'ArrowLeft') prev();
+    });
+
+    // Touch / swipe
+    let touchStartX = 0, touchEndX = 0;
+    carousel.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) (diff > 0 ? next : prev)();
+    }, { passive: true });
+
+    // Autoplay (pauses on hover)
+    function startAutoplay() {
+        autoplayTimer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stopAutoplay() {
+        if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // Start once carousel scrolls into view
+    const carouselIntersect = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) startAutoplay();
+            else stopAutoplay();
+        });
+    }, { threshold: 0.25 });
+    carouselIntersect.observe(carousel);
+
+    update();
+}
+
 // ========== CONSOLE SIGNATURE ==========
-console.log('%cGeoClaw — Satellite Intelligence for Ground Safety', 'color:#1e5f3e;font-size:14px;font-weight:700;');
-console.log('%cCrafted with modern web design principles.', 'color:#6b6b6b;font-size:11px;');
+console.log('%cGeoAgentix — Agentic AI for Satellite Ground Intelligence', 'color:#2563eb;font-size:14px;font-weight:700;');
+console.log('%cBuilt with modern web design principles.', 'color:#5b6b80;font-size:11px;');
