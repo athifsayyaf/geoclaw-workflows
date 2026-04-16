@@ -4,24 +4,33 @@
    ============================================================ */
 
 :root {
-    --bg:            #f6f8fc;
+    --bg:            #f4f6fa;
     --bg-alt:        #ffffff;
     --ink:           #0a0f1a;
     --ink-soft:      #1c2433;
     --ink-mute:      #5b6b80;
     --ink-light:     #94a0b3;
     --line:          #e2e8f0;
-    --line-dark:     #1a2236;
+    --line-dark:     #0a2647;
 
-    --accent-navy:   #0a1f44;
-    --accent-blue:   #1e3a8a;
-    --accent-bright: #2563eb;
-    --accent-sky:    #3b82f6;
-    --accent-light:  #60a5fa;
-    --accent-cyan:   #06b6d4;
-    --accent-gold:   #d4a456;
+    /* Corporate navy palette */
+    --accent-navy:   #002e5d;
+    --accent-blue:   #00468c;
+    --accent-bright: #0066cc;
+    --accent-sky:    #1f7ed6;
+    --accent-light:  #6aa9e4;
+    --accent-cyan:   #1a8fb3;
+    --accent-gold:   #c9a25a;
     --accent-orange: #e8673c;
     --accent-red:    #c0392b;
+
+    --shadow-sm: 0 2px 8px rgba(0, 46, 93, 0.06);
+    --shadow-md: 0 8px 24px rgba(0, 46, 93, 0.08);
+    --shadow-lg: 0 20px 50px rgba(0, 46, 93, 0.14);
+    --shadow-xl: 0 30px 80px rgba(0, 46, 93, 0.18);
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 /* ========== RESET ========== */
@@ -169,13 +178,19 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
     align-items: center;
     gap: 8px;
     padding: 10px 22px;
-    background: var(--ink);
+    background: var(--accent-navy);
     color: var(--bg) !important;
     border-radius: 100px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: transform 0.3s var(--ease-out), background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 46, 93, 0.20);
 }
-.nav-cta:hover { background: var(--accent-bright); transform: translateY(-1px); }
+.nav-cta:hover {
+    background: var(--accent-bright);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 102, 204, 0.40);
+}
+.nav-cta:active { transform: translateY(0) scale(0.98); }
 .nav-cta i { font-size: 11px; transition: transform 0.3s ease; }
 .nav-cta:hover i { transform: translateX(3px); }
 
@@ -361,9 +376,10 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 }
 .hero-cta:hover {
     background: var(--accent-bright);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(37, 99, 235, 0.35);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 18px 44px rgba(0, 102, 204, 0.42);
 }
+.hero-cta:active { transform: translateY(-1px) scale(0.99); }
 .cta-arrow {
     display: inline-flex;
     align-items: center;
@@ -446,26 +462,51 @@ section { padding: 130px 0; }
     background: var(--bg);
     border: 1px solid var(--line);
     position: relative;
-    transition: all 0.3s ease;
+    transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.3s ease, background 0.4s ease;
     overflow: hidden;
 }
+.offer-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.offer-card::after {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-bright), var(--accent-light));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
 .offer-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.012);
     border-color: var(--accent-bright);
-    box-shadow: 0 20px 50px rgba(10, 31, 68, 0.12);
+    box-shadow: var(--shadow-lg);
+}
+.offer-card:hover::before { opacity: 1; }
+.offer-card:hover .offer-icon {
+    transform: rotate(-6deg) scale(1.08);
+    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.40);
 }
 .offer-card .offer-icon {
     width: 56px;
     height: 56px;
     border-radius: 14px;
-    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-bright) 100%);
+    background: linear-gradient(135deg, var(--accent-navy) 0%, var(--accent-bright) 100%);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
     margin-bottom: 22px;
-    box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+    box-shadow: 0 8px 20px rgba(0, 70, 140, 0.30);
+    transition: transform 0.5s var(--ease-out), box-shadow 0.4s ease;
 }
 .offer-card h3 {
     font-size: 22px;
@@ -775,12 +816,24 @@ section { padding: 130px 0; }
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+    transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+    will-change: transform;
+}
+.tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.9s var(--ease-out);
+    pointer-events: none;
+    z-index: 3;
 }
 .tile:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(10, 31, 68, 0.18);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
 }
+.tile:hover::after { transform: translateX(100%); }
 
 .tile-lg { grid-column: span 3; grid-row: span 2; }
 .tile-md { grid-column: span 2; grid-row: span 1; }
@@ -1102,13 +1155,13 @@ section { padding: 130px 0; }
     border-radius: 20px;
     border: 1px solid var(--line);
     position: relative;
-    transition: all 0.3s ease;
+    transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.3s ease;
     overflow: hidden;
 }
 .approach-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-10px);
     border-color: var(--accent-bright);
-    box-shadow: 0 16px 36px rgba(37, 99, 235, 0.10);
+    box-shadow: var(--shadow-md);
 }
 
 .approach-num {

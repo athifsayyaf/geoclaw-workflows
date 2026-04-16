@@ -51,12 +51,54 @@ document.querySelectorAll('.tile').forEach(tile => {
         const rect = tile.getBoundingClientRect();
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotX = ((e.clientY - rect.top - centerY) / centerY) * -2;
-        const rotY = ((e.clientX - rect.left - centerX) / centerX) * 2;
-        tile.style.transform = `translateY(-6px) perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        const rotX = ((e.clientY - rect.top - centerY) / centerY) * -3;
+        const rotY = ((e.clientX - rect.left - centerX) / centerX) * 3;
+        tile.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
     });
     tile.addEventListener('mouseleave', () => { tile.style.transform = ''; });
 });
+
+// ========== OFFER CARD CURSOR-GLOW MICROINTERACTION ==========
+document.querySelectorAll('.offer-card, .approach-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 102, 204, 0.07), var(--bg-alt) 60%)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.background = ''; });
+});
+
+// ========== STAT NUMBER COUNT-UP ON REVEAL ==========
+const statNums = document.querySelectorAll('.stat-num, .about-card-num, .ss-num');
+const countUp = (el) => {
+    const text = el.textContent.trim();
+    const match = text.match(/^([±><~]?)(\d+(\.\d+)?)([^\d].*)?$/);
+    if (!match) return;
+    const prefix = match[1] || '';
+    const target = parseFloat(match[2]);
+    const suffix = match[4] || '';
+    const duration = 1100;
+    const start = performance.now();
+    const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const value = target * eased;
+        el.textContent = prefix + (target % 1 === 0 ? Math.round(value) : value.toFixed(1)) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = text;
+    };
+    requestAnimationFrame(tick);
+};
+const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            countUp(entry.target);
+            statObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.4 });
+statNums.forEach(el => statObserver.observe(el));
 
 // ========== SMOOTH SCROLL FOR ANCHORS ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -69,17 +111,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========== FOOTER BRAND PARALLAX ==========
+// ========== PARALLAX (footer brand + hero globe + section eyebrows) ==========
 const footerBrand = document.querySelector('.footer-brand h1');
-if (footerBrand) {
-    window.addEventListener('scroll', () => {
-        const rect = footerBrand.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const progress = 1 - (rect.top / window.innerHeight);
-            footerBrand.style.transform = `translateY(${progress * -30}px)`;
+const heroGlobe = document.querySelector('.hero-globe');
+const ctaGlobe = document.querySelector('.cta-globe');
+
+let parallaxTicking = false;
+function onScrollParallax() {
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+    requestAnimationFrame(() => {
+        const y = window.scrollY;
+
+        if (footerBrand) {
+            const rect = footerBrand.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const progress = 1 - (rect.top / window.innerHeight);
+                footerBrand.style.transform = `translateY(${progress * -30}px)`;
+            }
         }
+        if (heroGlobe && y < window.innerHeight * 1.5) {
+            heroGlobe.style.transform = `translateY(calc(-50% + ${y * 0.18}px))`;
+        }
+        if (ctaGlobe) {
+            const rect = ctaGlobe.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const offset = (rect.top - window.innerHeight / 2) * 0.08;
+                ctaGlobe.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
+            }
+        }
+        parallaxTicking = false;
     });
 }
+window.addEventListener('scroll', onScrollParallax, { passive: true });
 
 // ========== DECK CAROUSEL ==========
 const carousel = document.getElementById('carousel');
