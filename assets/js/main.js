@@ -233,6 +233,27 @@ if (carousel) {
     update();
 }
 
+// ========== CONTACT FORM ==========
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+        const details = [
+            `Name: ${formData.get('name') || ''}`,
+            `Email: ${formData.get('email') || ''}`,
+            `Phone: ${formData.get('phone') || ''}`,
+            `Company: ${formData.get('company') || ''}`,
+            '',
+            'Message:',
+            formData.get('message') || ''
+        ].join('\n');
+        const subject = encodeURIComponent('GeoAgentix website contact request');
+        const body = encodeURIComponent(details);
+        window.location.href = `mailto:athif.sayyaf@geoagentix.com?subject=${subject}&body=${body}`;
+    });
+}
+
 // ========== CONSOLE SIGNATURE ==========
 console.log('%cGeoAgentix — Agentic AI for Satellite Ground Intelligence', 'color:#1e5f3e;font-size:14px;font-weight:700;');
 console.log('%cBuilt with modern web design principles.', 'color:#5b6b80;font-size:11px;');
